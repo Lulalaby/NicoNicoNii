@@ -47,7 +47,7 @@ public class NicoVideoClient
 	{
 		var noMemberJson = JsonSerializer.Serialize(new[] { new NoMemberRequest(watchPageData) });
 		using var content = new StringContent(noMemberJson, Encoding.UTF8, "application/json");
-		using var msg = new HttpRequestMessage(HttpMethod.Post, $"https://public.api.nicovideo.jp/v1/user/actions/watch-events/nonmember.json?__retry=0");
+		using var msg = new HttpRequestMessage(HttpMethod.Post, "https://public.api.nicovideo.jp/v1/user/actions/watch-events/nonmember.json?__retry=0");
 		msg.Content = content;
 		msg.Headers.Add("X-Frontend-Id", "6");
 		msg.Headers.Add("X-Frontend-Version", "0");
