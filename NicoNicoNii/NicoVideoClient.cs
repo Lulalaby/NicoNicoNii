@@ -10,11 +10,11 @@ namespace NicoNicoNii;
 
 public class NicoVideoClient
 {
-	private readonly NNDClient _nndClient;
+	private readonly NndClient nndClient;
 
-	public NicoVideoClient(NNDClient nndClient)
+	public NicoVideoClient(NndClient nndClient)
 	{
-		this._nndClient = nndClient;
+		this.nndClient = nndClient;
 	}
 
 	/// <summary>
@@ -24,7 +24,7 @@ public class NicoVideoClient
 	/// <returns>WatchPage object</returns>
 	public async Task<WatchPageData> GetWatchPageInfoAsync(string videoId)
 	{
-		var pageResponse = await this._nndClient._client.GetAsync($"https://www.nicovideo.jp/watch/{videoId}", HttpCompletionOption.ResponseHeadersRead);
+		var pageResponse = await this.nndClient.Client.GetAsync($"https://www.nicovideo.jp/watch/{videoId}", HttpCompletionOption.ResponseHeadersRead);
 
 		if (!pageResponse.IsSuccessStatusCode)
 			return default;
@@ -52,7 +52,7 @@ public class NicoVideoClient
 		msg.Headers.Add("X-Frontend-Id", "6");
 		msg.Headers.Add("X-Frontend-Version", "0");
 		msg.Headers.Add("X-Request-With", $"https://www.nicovideo.jp/watch/{watchPageData.Client.WatchId}");
-		var response = await this._nndClient._client.SendAsync(msg);
+		var response = await this.nndClient.Client.SendAsync(msg);
 	}
 
 	/// <summary>
@@ -62,21 +62,21 @@ public class NicoVideoClient
 	/// <param name="audioQualities">Preferred audio streams (there are like 1-2 depending on video), if multiple or null NND will decide</param>
 	/// <param name="videoQualities">Preferred video streams, if multiple or null NND will decide</param>
 	/// <returns>SessionCreate Response with video API info about the content</returns>
-	public async Task<SessionCreateResponse> GetHTTPVideoApiResponseAsync(WatchPageData watchPageData, string[] audioQualities = null, string[] videoQualities = null)
+	public async Task<SessionCreateResponse> GetHttpVideoApiResponseAsync(WatchPageData watchPageData, string[] audioQualities = null, string[] videoQualities = null)
 	{
 		videoQualities ??= watchPageData.Media.Delivery.Movie.Session.Videos.ToArray();
 		audioQualities ??= watchPageData.Media.Delivery.Movie.Session.Audios.ToArray();
 
 		var loggedIn = false;
-		if (this._nndClient.LoginDate != null
-		    && (DateTimeOffset.UtcNow.DateTime - this._nndClient.LoginDate?.DateTime)?.Hours < 5)
+		if (this.nndClient.LoginDate != null
+		    && (DateTimeOffset.UtcNow.DateTime - this.nndClient.LoginDate?.DateTime)?.Hours < 5)
 			loggedIn = true;
 
-		var json = JsonSerializer.Serialize(new SessionCreateHTTP(watchPageData, audioQualities, videoQualities, loggedIn));
+		var json = JsonSerializer.Serialize(new SessionCreateHttp(watchPageData, audioQualities, videoQualities, loggedIn));
 		using var content = new StringContent(json, Encoding.UTF8, "application/json");
 		using var msg = new HttpRequestMessage(HttpMethod.Post, $"{watchPageData.Media.Delivery.Movie.Session.Urls[0].UrlUrl}?_format=json");
 		msg.Content = content;
-		var response = await this._nndClient._client.SendAsync(msg);
+		var response = await this.nndClient.Client.SendAsync(msg);
 		var responseJson = await response.Content.ReadAsStringAsync();
 		var sessionResponse = JsonSerializer.Deserialize<SessionCreateResponse>(responseJson);
 		return sessionResponse;
@@ -89,21 +89,21 @@ public class NicoVideoClient
 	/// <param name="audioQualities">Preferred audio streams (there are like 1-2 depending on video), if multiple or null NND will decide</param>
 	/// <param name="videoQualities">Preferred video streams, if multiple or null NND will decide</param>
 	/// <returns>SessionCreate Response with video API info about the content</returns>
-	public async Task<SessionCreateResponse> GetHLSVideoApiResponseAsync(WatchPageData watchPageData, string[] audioQualities = null, string[] videoQualities = null)
+	public async Task<SessionCreateResponse> GetHlsVideoApiResponseAsync(WatchPageData watchPageData, string[] audioQualities = null, string[] videoQualities = null)
 	{
 		videoQualities ??= watchPageData.Media.Delivery.Movie.Session.Videos.ToArray();
 		audioQualities ??= watchPageData.Media.Delivery.Movie.Session.Audios.ToArray();
 
 		var loggedIn = false;
-		if (this._nndClient.LoginDate != null
-		    && (DateTimeOffset.UtcNow.DateTime - this._nndClient.LoginDate?.DateTime)?.Hours < 5)
+		if (this.nndClient.LoginDate != null
+		    && (DateTimeOffset.UtcNow.DateTime - this.nndClient.LoginDate?.DateTime)?.Hours < 5)
 			loggedIn = true;
 
-		var json = JsonSerializer.Serialize(new SessionCreateHLS(watchPageData, audioQualities, videoQualities, loggedIn));
+		var json = JsonSerializer.Serialize(new SessionCreateHls(watchPageData, audioQualities, videoQualities, loggedIn));
 		using var content = new StringContent(json, Encoding.UTF8, "application/json");
 		using var msg = new HttpRequestMessage(HttpMethod.Post, $"{watchPageData.Media.Delivery.Movie.Session.Urls[0].UrlUrl}?_format=json");
 		msg.Content = content;
-		var response = await this._nndClient._client.SendAsync(msg);
+		var response = await this.nndClient.Client.SendAsync(msg);
 		var responseJson = await response.Content.ReadAsStringAsync();
 		var sessionResponse = JsonSerializer.Deserialize<SessionCreateResponse>(responseJson);
 		return sessionResponse;
