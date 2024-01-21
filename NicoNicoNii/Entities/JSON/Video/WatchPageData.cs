@@ -2,7 +2,7 @@
 
 namespace NicoNicoNii.Entities.JSON.Video;
 
-public class WatchPageData
+public sealed class WatchPageData
 {
 	[JsonPropertyName("ads")] public object Ads { get; set; }
 
@@ -58,7 +58,7 @@ public class WatchPageData
 
 	[JsonPropertyName("waku")] public WakuClass Waku { get; set; }
 
-	public partial class ClientClass
+	public sealed partial class ClientClass
 	{
 		[JsonPropertyName("nicosid")] public string Nicosid { get; set; }
 
@@ -67,7 +67,7 @@ public class WatchPageData
 		[JsonPropertyName("watchTrackId")] public string WatchTrackId { get; set; }
 	}
 
-	public partial class TemperaturesComment
+	public sealed partial class TemperaturesComment
 	{
 		[JsonPropertyName("server")] public Server Server { get; set; }
 
@@ -82,12 +82,12 @@ public class WatchPageData
 		[JsonPropertyName("isAttentionRequired")] public bool? IsAttentionRequired { get; set; }
 	}
 
-	public partial class Keys
+	public sealed partial class Keys
 	{
 		[JsonPropertyName("userKey")] public string UserKey { get; set; }
 	}
 
-	public partial class Layer
+	public sealed partial class Layer
 	{
 		[JsonPropertyName("index")] public long? Index { get; set; }
 
@@ -96,14 +96,14 @@ public class WatchPageData
 		[JsonPropertyName("threadIds")] public List<ThreadId> ThreadIds { get; set; } = new();
 	}
 
-	public partial class ThreadId
+	public sealed partial class ThreadId
 	{
 		[JsonPropertyName("id")] public long? Id { get; set; }
 
 		[JsonPropertyName("fork")] public long? Fork { get; set; }
 	}
 
-	public partial class Ng
+	public sealed partial class Ng
 	{
 		[JsonPropertyName("ngScore")] public NgScore NgScore { get; set; }
 
@@ -114,12 +114,12 @@ public class WatchPageData
 		[JsonPropertyName("viewer")] public NgViewer Viewer { get; set; }
 	}
 
-	public partial class NgScore
+	public sealed partial class NgScore
 	{
 		[JsonPropertyName("isDisabled")] public bool? IsDisabled { get; set; }
 	}
 
-	public partial class NgViewer
+	public sealed partial class NgViewer
 	{
 		[JsonPropertyName("revision")] public long? Revision { get; set; }
 
@@ -128,12 +128,12 @@ public class WatchPageData
 		[JsonPropertyName("items")] public List<object> Items { get; set; } = new();
 	}
 
-	public partial class Server
+	public sealed partial class Server
 	{
 		[JsonPropertyName("url")] public Uri Url { get; set; }
 	}
 
-	public partial class Thread
+	public sealed partial class Thread
 	{
 		[JsonPropertyName("id")] public long? Id { get; set; }
 
@@ -164,33 +164,33 @@ public class WatchPageData
 		[JsonPropertyName("server")] public Uri Server { get; set; }
 	}
 
-	public partial class CommunityClass
+	public sealed partial class CommunityClass
 	{
 		[JsonPropertyName("main")] public Main Main { get; set; }
 
 		[JsonPropertyName("belong")] public object Belong { get; set; }
 	}
 
-	public partial class Main
+	public sealed partial class Main
 	{
 		[JsonPropertyName("id")] public string Id { get; set; }
 
 		[JsonPropertyName("name")] public string Name { get; set; }
 	}
 
-	public partial class EasyCommentClass
+	public sealed partial class EasyCommentClass
 	{
 		[JsonPropertyName("phrases")] public List<Phrase> Phrases { get; set; } = new();
 	}
 
-	public partial class Phrase
+	public sealed partial class Phrase
 	{
 		[JsonPropertyName("text")] public string Text { get; set; }
 
 		[JsonPropertyName("nicodic")] public Nicodic Nicodic { get; set; }
 	}
 
-	public partial class Nicodic
+	public sealed partial class Nicodic
 	{
 		[JsonPropertyName("title")] public string Title { get; set; }
 
@@ -201,24 +201,24 @@ public class WatchPageData
 		[JsonPropertyName("link")] public Uri Link { get; set; }
 	}
 
-	public partial class ExternalClass
+	public sealed partial class ExternalClass
 	{
 		[JsonPropertyName("commons")] public Commons Commons { get; set; }
 
 		[JsonPropertyName("ichiba")] public Ichiba Ichiba { get; set; }
 	}
 
-	public partial class Commons
+	public sealed partial class Commons
 	{
 		[JsonPropertyName("hasContentTree")] public bool? HasContentTree { get; set; }
 	}
 
-	public partial class Ichiba
+	public sealed partial class Ichiba
 	{
 		[JsonPropertyName("isEnabled")] public bool? IsEnabled { get; set; }
 	}
 
-	public partial class TemperaturesGenre
+	public sealed partial class TemperaturesGenre
 	{
 		[JsonPropertyName("key")] public string Key { get; set; }
 
@@ -231,21 +231,21 @@ public class WatchPageData
 		[JsonPropertyName("isNotSet")] public bool? IsNotSet { get; set; }
 	}
 
-	public partial class MarqueeClass
+	public sealed partial class MarqueeClass
 	{
 		[JsonPropertyName("isDisabled")] public bool? IsDisabled { get; set; }
 
 		[JsonPropertyName("tagRelatedLead")] public object TagRelatedLead { get; set; }
 	}
 
-	public partial class MediaClass
+	public sealed partial class MediaClass
 	{
 		[JsonPropertyName("delivery")] public Delivery Delivery { get; set; }
 
 		[JsonPropertyName("deliveryLegacy")] public object DeliveryLegacy { get; set; }
 	}
 
-	public partial class Delivery
+	public sealed partial class Delivery
 	{
 		[JsonPropertyName("recipeId")] public string RecipeId { get; set; }
 
@@ -258,7 +258,7 @@ public class WatchPageData
 		[JsonPropertyName("trackingId")] public string TrackingId { get; set; }
 	}
 
-	public partial class Movie
+	public sealed partial class Movie
 	{
 		[JsonPropertyName("contentId")] public string ContentId { get; set; }
 
@@ -269,7 +269,7 @@ public class WatchPageData
 		[JsonPropertyName("session")] public MovieSession Session { get; set; }
 	}
 
-	public partial class Audio
+	public sealed partial class Audio
 	{
 		[JsonPropertyName("id")] public string Id { get; set; }
 
@@ -278,7 +278,7 @@ public class WatchPageData
 		[JsonPropertyName("metadata")] public AudioMetadata Metadata { get; set; }
 	}
 
-	public partial class AudioMetadata
+	public sealed partial class AudioMetadata
 	{
 		[JsonPropertyName("bitrate")] public long? Bitrate { get; set; }
 
@@ -291,21 +291,21 @@ public class WatchPageData
 		[JsonPropertyName("loudnessCollection")] public List<LoudnessCollection> LoudnessCollection { get; set; } = new();
 	}
 
-	public partial class Loudness
+	public sealed partial class Loudness
 	{
 		[JsonPropertyName("integratedLoudness")] public double? IntegratedLoudness { get; set; }
 
 		[JsonPropertyName("truePeak")] public double? TruePeak { get; set; }
 	}
 
-	public partial class LoudnessCollection
+	public sealed partial class LoudnessCollection
 	{
 		[JsonPropertyName("type")] public string Type { get; set; }
 
 		[JsonPropertyName("value")] public double? Value { get; set; }
 	}
 
-	public partial class MovieSession
+	public sealed partial class MovieSession
 	{
 		[JsonPropertyName("recipeId")] public string RecipeId { get; set; }
 
@@ -340,14 +340,14 @@ public class WatchPageData
 		[JsonPropertyName("urls")] public List<Url> Urls { get; set; } = new();
 	}
 
-	public partial class PurpleAuthTypes
+	public sealed partial class PurpleAuthTypes
 	{
 		[JsonPropertyName("http")] public string Http { get; set; }
 
 		[JsonPropertyName("hls")] public string Hls { get; set; }
 	}
 
-	public partial class Url
+	public sealed partial class Url
 	{
 		[JsonPropertyName("url")] public Uri UrlUrl { get; set; }
 
@@ -356,7 +356,7 @@ public class WatchPageData
 		[JsonPropertyName("isSsl")] public bool? IsSsl { get; set; }
 	}
 
-	public partial class VideoElement
+	public sealed partial class VideoElement
 	{
 		[JsonPropertyName("id")] public string Id { get; set; }
 
@@ -365,7 +365,7 @@ public class WatchPageData
 		[JsonPropertyName("metadata")] public VideoMetadata Metadata { get; set; }
 	}
 
-	public partial class VideoMetadata
+	public sealed partial class VideoMetadata
 	{
 		[JsonPropertyName("label")] public string Label { get; set; }
 
@@ -379,14 +379,14 @@ public class WatchPageData
 		public long? RecommendedHighestAudioLevelIndex { get; set; }
 	}
 
-	public partial class Resolution
+	public sealed partial class Resolution
 	{
 		[JsonPropertyName("width")] public long? Width { get; set; }
 
 		[JsonPropertyName("height")] public long? Height { get; set; }
 	}
 
-	public partial class Storyboard
+	public sealed partial class Storyboard
 	{
 		[JsonPropertyName("contentId")] public string ContentId { get; set; }
 
@@ -395,12 +395,12 @@ public class WatchPageData
 		[JsonPropertyName("session")] public StoryboardSession Session { get; set; }
 	}
 
-	public partial class Image
+	public sealed partial class Image
 	{
 		[JsonPropertyName("id")] public string Id { get; set; }
 	}
 
-	public partial class StoryboardSession
+	public sealed partial class StoryboardSession
 	{
 		[JsonPropertyName("recipeId")] public string RecipeId { get; set; }
 
@@ -435,12 +435,12 @@ public class WatchPageData
 		[JsonPropertyName("urls")] public List<Url> Urls { get; set; } = new();
 	}
 
-	public partial class FluffyAuthTypes
+	public sealed partial class FluffyAuthTypes
 	{
 		[JsonPropertyName("storyboard")] public string Storyboard { get; set; }
 	}
 
-	public partial class TemperaturesOwner
+	public sealed partial class TemperaturesOwner
 	{
 		[JsonPropertyName("id")] public long? Id { get; set; }
 
@@ -461,19 +461,19 @@ public class WatchPageData
 		[JsonPropertyName("viewer")] public OwnerViewer Viewer { get; set; }
 	}
 
-	public partial class OwnerViewer
+	public sealed partial class OwnerViewer
 	{
 		[JsonPropertyName("isFollowing")] public bool? IsFollowing { get; set; }
 	}
 
-	public partial class PaymentClass
+	public sealed partial class PaymentClass
 	{
 		[JsonPropertyName("video")] public PaymentVideo Video { get; set; }
 
 		[JsonPropertyName("preview")] public Preview Preview { get; set; }
 	}
 
-	public partial class Preview
+	public sealed partial class Preview
 	{
 		[JsonPropertyName("ppv")] public Ichiba Ppv { get; set; }
 
@@ -482,7 +482,7 @@ public class WatchPageData
 		[JsonPropertyName("premium")] public Ichiba Premium { get; set; }
 	}
 
-	public partial class PaymentVideo
+	public sealed partial class PaymentVideo
 	{
 		[JsonPropertyName("isPpv")] public bool? IsPpv { get; set; }
 
@@ -495,7 +495,7 @@ public class WatchPageData
 		[JsonPropertyName("commentableUserType")] public string CommentableUserType { get; set; }
 	}
 
-	public partial class PcWatchPageClass
+	public sealed partial class PcWatchPageClass
 	{
 		[JsonPropertyName("tagRelatedBanner")] public object TagRelatedBanner { get; set; }
 
@@ -508,14 +508,14 @@ public class WatchPageData
 		[JsonPropertyName("showMymemoryEditingLink")] public bool? ShowMymemoryEditingLink { get; set; }
 	}
 
-	public partial class VideoEnd
+	public sealed partial class VideoEnd
 	{
 		[JsonPropertyName("bannerIn")] public object BannerIn { get; set; }
 
 		[JsonPropertyName("overlay")] public object Overlay { get; set; }
 	}
 
-	public partial class PlayerClass
+	public sealed partial class PlayerClass
 	{
 		[JsonPropertyName("initialPlayback")] public InitialPlayback InitialPlayback { get; set; }
 
@@ -524,26 +524,26 @@ public class WatchPageData
 		[JsonPropertyName("layerMode")] public long? LayerMode { get; set; }
 	}
 
-	public partial class PlayerComment
+	public sealed partial class PlayerComment
 	{
 		[JsonPropertyName("isDefaultInvisible")] public bool? IsDefaultInvisible { get; set; }
 	}
 
-	public partial class InitialPlayback
+	public sealed partial class InitialPlayback
 	{
 		[JsonPropertyName("type")] public string Type { get; set; }
 
 		[JsonPropertyName("positionSec")] public double? PositionSec { get; set; }
 	}
 
-	public partial class RankingClass
+	public sealed partial class RankingClass
 	{
 		[JsonPropertyName("genre")] public RankingGenre Genre { get; set; }
 
 		[JsonPropertyName("popularTag")] public List<PopularTag> PopularTag { get; set; } = new();
 	}
 
-	public partial class RankingGenre
+	public sealed partial class RankingGenre
 	{
 		[JsonPropertyName("rank")] public long? Rank { get; set; }
 
@@ -552,7 +552,7 @@ public class WatchPageData
 		[JsonPropertyName("dateTime")] public DateTimeOffset? DateTime { get; set; }
 	}
 
-	public partial class PopularTag
+	public sealed partial class PopularTag
 	{
 		[JsonPropertyName("tag")] public string Tag { get; set; }
 
@@ -565,7 +565,7 @@ public class WatchPageData
 		[JsonPropertyName("dateTime")] public DateTimeOffset? DateTime { get; set; }
 	}
 
-	public partial class SeriesClass
+	public sealed partial class SeriesClass
 	{
 		[JsonPropertyName("id")] public long? Id { get; set; }
 
@@ -578,7 +578,7 @@ public class WatchPageData
 		[JsonPropertyName("video")] public SeriesVideo Video { get; set; }
 	}
 
-	public partial class SeriesVideo
+	public sealed partial class SeriesVideo
 	{
 		[JsonPropertyName("prev")] public First Prev { get; set; }
 
@@ -587,7 +587,7 @@ public class WatchPageData
 		[JsonPropertyName("first")] public First First { get; set; }
 	}
 
-	public partial class First
+	public sealed partial class First
 	{
 		[JsonPropertyName("type")] public string Type { get; set; }
 
@@ -624,7 +624,7 @@ public class WatchPageData
 		[JsonPropertyName("acf68865")] public bool? Acf68865 { get; set; }
 	}
 
-	public partial class Count
+	public sealed partial class Count
 	{
 		[JsonPropertyName("view")] public long? View { get; set; }
 
@@ -635,7 +635,7 @@ public class WatchPageData
 		[JsonPropertyName("like")] public long? Like { get; set; }
 	}
 
-	public partial class FirstOwner
+	public sealed partial class FirstOwner
 	{
 		[JsonPropertyName("ownerType")] public string OwnerType { get; set; }
 
@@ -646,7 +646,7 @@ public class WatchPageData
 		[JsonPropertyName("iconUrl")] public Uri IconUrl { get; set; }
 	}
 
-	public partial class FirstThumbnail
+	public sealed partial class FirstThumbnail
 	{
 		[JsonPropertyName("url")] public Uri Url { get; set; }
 
@@ -659,14 +659,14 @@ public class WatchPageData
 		[JsonPropertyName("nHdUrl")] public Uri NHdUrl { get; set; }
 	}
 
-	public partial class SystemClass
+	public sealed partial class SystemClass
 	{
 		[JsonPropertyName("serverTime")] public DateTimeOffset? ServerTime { get; set; }
 
 		[JsonPropertyName("isPeakTime")] public bool? IsPeakTime { get; set; }
 	}
 
-	public partial class TagClass
+	public sealed partial class TagClass
 	{
 		[JsonPropertyName("items")] public List<Item> Items { get; set; } = new();
 
@@ -679,7 +679,7 @@ public class WatchPageData
 		[JsonPropertyName("viewer")] public Edit Viewer { get; set; }
 	}
 
-	public partial class Edit
+	public sealed partial class Edit
 	{
 		[JsonPropertyName("isEditable")] public bool? IsEditable { get; set; }
 
@@ -688,7 +688,7 @@ public class WatchPageData
 		[JsonPropertyName("editKey")] public string EditKey { get; set; }
 	}
 
-	public partial class Item
+	public sealed partial class Item
 	{
 		[JsonPropertyName("name")] public string Name { get; set; }
 
@@ -701,7 +701,7 @@ public class WatchPageData
 		[JsonPropertyName("isLocked")] public bool? IsLocked { get; set; }
 	}
 
-	public partial class TemperaturesVideo
+	public sealed partial class TemperaturesVideo
 	{
 		[JsonPropertyName("id")] public string Id { get; set; }
 
@@ -739,12 +739,12 @@ public class WatchPageData
 		[JsonPropertyName("9d091f87")] public bool? The9D091F87 { get; set; }
 	}
 
-	public partial class Rating
+	public sealed partial class Rating
 	{
 		[JsonPropertyName("isAdult")] public bool? IsAdult { get; set; }
 	}
 
-	public partial class VideoThumbnail
+	public sealed partial class VideoThumbnail
 	{
 		[JsonPropertyName("url")] public Uri Url { get; set; }
 
@@ -757,21 +757,21 @@ public class WatchPageData
 		[JsonPropertyName("ogp")] public Uri Ogp { get; set; }
 	}
 
-	public partial class VideoViewer
+	public sealed partial class VideoViewer
 	{
 		[JsonPropertyName("isOwner")] public bool? IsOwner { get; set; }
 
 		[JsonPropertyName("like")] public Like Like { get; set; }
 	}
 
-	public partial class Like
+	public sealed partial class Like
 	{
 		[JsonPropertyName("isLiked")] public bool? IsLiked { get; set; }
 
 		[JsonPropertyName("count")] public object Count { get; set; }
 	}
 
-	public partial class VideoAdsClass
+	public sealed partial class VideoAdsClass
 	{
 		[JsonPropertyName("additionalParams")] public AdditionalParams AdditionalParams { get; set; }
 
@@ -780,7 +780,7 @@ public class WatchPageData
 		[JsonPropertyName("reason")] public object Reason { get; set; }
 	}
 
-	public partial class AdditionalParams
+	public sealed partial class AdditionalParams
 	{
 		[JsonPropertyName("videoId")] public string VideoId { get; set; }
 
@@ -805,7 +805,7 @@ public class WatchPageData
 		[JsonPropertyName("age")] public long? Age { get; set; }
 	}
 
-	public partial class TemperaturesViewer
+	public sealed partial class TemperaturesViewer
 	{
 		[JsonPropertyName("id")] public long? Id { get; set; }
 
@@ -816,7 +816,7 @@ public class WatchPageData
 		[JsonPropertyName("existence")] public Existence Existence { get; set; }
 	}
 
-	public partial class Existence
+	public sealed partial class Existence
 	{
 		[JsonPropertyName("age")] public long? Age { get; set; }
 
@@ -825,7 +825,7 @@ public class WatchPageData
 		[JsonPropertyName("sex")] public string Sex { get; set; }
 	}
 
-	public partial class WakuClass
+	public sealed partial class WakuClass
 	{
 		[JsonPropertyName("information")] public object Information { get; set; }
 

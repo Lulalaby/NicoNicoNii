@@ -5,7 +5,7 @@ namespace NicoNicoNii.Entities.JSON.Video;
 //POST
 //https://api.dmc.nico/api/sessions?_format=json
 //HTTP Protocol
-public class SessionCreateHTTP
+public sealed class SessionCreateHTTP
 {
 	public SessionCreateHTTP(WatchPageData watchPage, string[] audioQuality, string[] videoQuality, bool loggedIn)
 	{
@@ -61,7 +61,7 @@ public class SessionCreateHTTP
 
 	[JsonPropertyName("session")] public SessionClass Session { get; set; } = new();
 
-	public partial class SessionClass
+	public sealed partial class SessionClass
 	{
 		[JsonPropertyName("recipe_id")] public string RecipeId { get; set; }
 
@@ -88,12 +88,12 @@ public class SessionCreateHTTP
 		[JsonPropertyName("priority")] public double? Priority { get; set; }
 	}
 
-	public partial class ClientInfo
+	public sealed partial class ClientInfo
 	{
 		[JsonPropertyName("player_id")] public string PlayerId { get; set; }
 	}
 
-	public partial class ContentAuth
+	public sealed partial class ContentAuth
 	{
 		[JsonPropertyName("auth_type")] public string AuthType { get; set; }
 
@@ -104,57 +104,57 @@ public class SessionCreateHTTP
 		[JsonPropertyName("service_user_id")] public string ServiceUserId { get; set; }
 	}
 
-	public partial class ContentSrcIdSet
+	public sealed partial class ContentSrcIdSet
 	{
 		[JsonPropertyName("content_src_ids")] public ContentSrcId[] ContentSrcIds { get; set; }
 	}
 
-	public partial class ContentSrcId
+	public sealed partial class ContentSrcId
 	{
 		[JsonPropertyName("src_id_to_mux")] public SrcIdToMux SrcIdToMux { get; set; } = new();
 	}
 
-	public partial class SrcIdToMux
+	public sealed partial class SrcIdToMux
 	{
 		[JsonPropertyName("video_src_ids")] public IEnumerable<string> VideoSrcIds { get; set; }
 
 		[JsonPropertyName("audio_src_ids")] public IEnumerable<string> AudioSrcIds { get; set; }
 	}
 
-	public partial class KeepMethod
+	public sealed partial class KeepMethod
 	{
 		[JsonPropertyName("heartbeat")] public Heartbeat Heartbeat { get; set; } = new();
 	}
 
-	public partial class Heartbeat
+	public sealed partial class Heartbeat
 	{
 		[JsonPropertyName("lifetime")] public long? Lifetime { get; set; }
 	}
 
-	public partial class Protocol
+	public sealed partial class Protocol
 	{
 		[JsonPropertyName("name")] public string Name { get; set; }
 
 		[JsonPropertyName("parameters")] public ProtocolParameters Parameters { get; set; } = new();
 	}
 
-	public partial class ProtocolParameters
+	public sealed partial class ProtocolParameters
 	{
 		[JsonPropertyName("http_parameters")] public HttpParameters HttpParameters { get; set; } = new();
 	}
 
-	public partial class HttpParameters
+	public sealed partial class HttpParameters
 	{
 		[JsonPropertyName("parameters")] public HttpParametersParameters Parameters { get; set; } = new();
 	}
 
-	public partial class HttpParametersParameters
+	public sealed partial class HttpParametersParameters
 	{
 		[JsonPropertyName("http_output_download_parameters")]
 		public HttpOutputDownloadParameters HttpOutputDownloadParameters { get; set; } = new();
 	}
 
-	public partial class HttpOutputDownloadParameters
+	public sealed partial class HttpOutputDownloadParameters
 	{
 		[JsonPropertyName("use_well_known_port")] public string UseWellKnownPort { get; set; }
 
@@ -163,13 +163,13 @@ public class SessionCreateHTTP
 		[JsonPropertyName("transfer_preset")] public string TransferPreset { get; set; }
 	}
 
-	public partial class SessionOperationAuth
+	public sealed partial class SessionOperationAuth
 	{
 		[JsonPropertyName("session_operation_auth_by_signature")]
 		public SessionOperationAuthBySignature SessionOperationAuthBySignature { get; set; } = new();
 	}
 
-	public partial class SessionOperationAuthBySignature
+	public sealed partial class SessionOperationAuthBySignature
 	{
 		[JsonPropertyName("token")] public string Token { get; set; }
 

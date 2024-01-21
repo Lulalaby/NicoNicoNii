@@ -2,7 +2,7 @@
 
 namespace NicoNicoNii.Entities.JSON.Video;
 
-public class NoMemberRequest
+public sealed class NoMemberRequest
 {
 	public NoMemberRequest(WatchPageData watchPageData)
 	{
@@ -59,7 +59,7 @@ public class NoMemberRequest
 
 	[JsonPropertyName("additionalParameters")] public AdditionalParametersClass AdditionalParameters { get; set; } = new();
 
-	public partial class AdditionalParametersClass
+	public sealed partial class AdditionalParametersClass
 	{
 		[JsonPropertyName("player_type")] public string PlayerType { get; set; }
 
@@ -126,7 +126,7 @@ public class NoMemberRequest
 		[JsonPropertyName("viewing_source_detail")] public QueryParameters ViewingSourceDetail { get; set; } = new();
 	}
 
-	public partial class Performance
+	public sealed partial class Performance
 	{
 		[JsonPropertyName("watch_access_start")] public long? WatchAccessStart { get; set; }
 
@@ -151,7 +151,7 @@ public class NoMemberRequest
 		[JsonPropertyName("end_context")] public EndContext EndContext { get; set; } = new();
 	}
 
-	public partial class EndContext
+	public sealed partial class EndContext
 	{
 		[JsonPropertyName("ad_playing")] public bool? AdPlaying { get; set; }
 
@@ -160,6 +160,6 @@ public class NoMemberRequest
 		[JsonPropertyName("is_suspending")] public bool? IsSuspending { get; set; }
 	}
 
-	public partial class QueryParameters
+	public sealed partial class QueryParameters
 	{ }
 }
