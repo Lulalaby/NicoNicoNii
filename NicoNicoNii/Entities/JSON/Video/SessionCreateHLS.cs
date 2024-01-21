@@ -21,7 +21,7 @@ public class SessionCreateHLS
 				{
 					new ContentSrcId()
 					{
-						SrcIdToMux = new SrcIdToMux
+						SrcIdToMux = new()
 						{
 							AudioSrcIds = audioQuality,
 							VideoSrcIds = videoQuality
@@ -62,142 +62,109 @@ public class SessionCreateHLS
 		this.Session.Priority = loggedIn ? 0.8 : 0;
 	}
 
-	[JsonPropertyName("session")]
-	public SessionClass Session { get; set; } = new();
+	[JsonPropertyName("session")] public SessionClass Session { get; set; } = new();
 
 	public partial class SessionClass
 	{
-		[JsonPropertyName("recipe_id")]
-		public string RecipeId { get; set; }
+		[JsonPropertyName("recipe_id")] public string RecipeId { get; set; }
 
-		[JsonPropertyName("content_id")]
-		public string ContentId { get; set; }
+		[JsonPropertyName("content_id")] public string ContentId { get; set; }
 
-		[JsonPropertyName("content_type")]
-		public string ContentType { get; set; }
+		[JsonPropertyName("content_type")] public string ContentType { get; set; }
 
-		[JsonPropertyName("content_src_id_sets")]
-		public ContentSrcIdSet[] ContentSrcIdSets { get; set; }
+		[JsonPropertyName("content_src_id_sets")] public ContentSrcIdSet[] ContentSrcIdSets { get; set; }
 
-		[JsonPropertyName("timing_constraint")]
-		public string TimingConstraint { get; set; }
+		[JsonPropertyName("timing_constraint")] public string TimingConstraint { get; set; }
 
-		[JsonPropertyName("keep_method")]
-		public KeepMethod KeepMethod { get; set; } = new();
+		[JsonPropertyName("keep_method")] public KeepMethod KeepMethod { get; set; } = new();
 
-		[JsonPropertyName("protocol")]
-		public Protocol Protocol { get; set; } = new();
+		[JsonPropertyName("protocol")] public Protocol Protocol { get; set; } = new();
 
-		[JsonPropertyName("content_uri")]
-		public string ContentUri { get; set; }
+		[JsonPropertyName("content_uri")] public string ContentUri { get; set; }
 
-		[JsonPropertyName("session_operation_auth")]
-		public SessionOperationAuth SessionOperationAuth { get; set; } = new();
+		[JsonPropertyName("session_operation_auth")] public SessionOperationAuth SessionOperationAuth { get; set; } = new();
 
-		[JsonPropertyName("content_auth")]
-		public ContentAuth ContentAuth { get; set; } = new();
+		[JsonPropertyName("content_auth")] public ContentAuth ContentAuth { get; set; } = new();
 
-		[JsonPropertyName("client_info")]
-		public ClientInfo ClientInfo { get; set; } = new();
+		[JsonPropertyName("client_info")] public ClientInfo ClientInfo { get; set; } = new();
 
-		[JsonPropertyName("priority")]
-		public double? Priority { get; set; }
+		[JsonPropertyName("priority")] public double? Priority { get; set; }
 	}
 
 	public partial class ClientInfo
 	{
-		[JsonPropertyName("player_id")]
-		public string PlayerId { get; set; }
+		[JsonPropertyName("player_id")] public string PlayerId { get; set; }
 	}
 
 	public partial class ContentAuth
 	{
-		[JsonPropertyName("auth_type")]
-		public string AuthType { get; set; }
+		[JsonPropertyName("auth_type")] public string AuthType { get; set; }
 
-		[JsonPropertyName("content_key_timeout")]
-		public long? ContentKeyTimeout { get; set; }
+		[JsonPropertyName("content_key_timeout")] public long? ContentKeyTimeout { get; set; }
 
-		[JsonPropertyName("service_id")]
-		public string ServiceId { get; set; }
+		[JsonPropertyName("service_id")] public string ServiceId { get; set; }
 
-		[JsonPropertyName("service_user_id")]
-		public string ServiceUserId { get; set; }
+		[JsonPropertyName("service_user_id")] public string ServiceUserId { get; set; }
 	}
 
 	public partial class ContentSrcIdSet
 	{
-		[JsonPropertyName("content_src_ids")]
-		public ContentSrcId[] ContentSrcIds { get; set; }
+		[JsonPropertyName("content_src_ids")] public ContentSrcId[] ContentSrcIds { get; set; }
 	}
 
 	public partial class ContentSrcId
 	{
-		[JsonPropertyName("src_id_to_mux")]
-		public SrcIdToMux SrcIdToMux { get; set; } = new();
+		[JsonPropertyName("src_id_to_mux")] public SrcIdToMux SrcIdToMux { get; set; } = new();
 	}
 
 	public partial class SrcIdToMux
 	{
-		[JsonPropertyName("video_src_ids")]
-		public IEnumerable<string> VideoSrcIds { get; set; }
+		[JsonPropertyName("video_src_ids")] public IEnumerable<string> VideoSrcIds { get; set; }
 
-		[JsonPropertyName("audio_src_ids")]
-		public IEnumerable<string> AudioSrcIds { get; set; }
+		[JsonPropertyName("audio_src_ids")] public IEnumerable<string> AudioSrcIds { get; set; }
 	}
 
 	public partial class KeepMethod
 	{
-		[JsonPropertyName("heartbeat")]
-		public Heartbeat Heartbeat { get; set; } = new();
+		[JsonPropertyName("heartbeat")] public Heartbeat Heartbeat { get; set; } = new();
 	}
 
 	public partial class Heartbeat
 	{
-		[JsonPropertyName("lifetime")]
-		public long? Lifetime { get; set; }
+		[JsonPropertyName("lifetime")] public long? Lifetime { get; set; }
 	}
 
 	public partial class Protocol
 	{
-		[JsonPropertyName("name")]
-		public string Name { get; set; }
+		[JsonPropertyName("name")] public string Name { get; set; }
 
-		[JsonPropertyName("parameters")]
-		public ProtocolParameters Parameters { get; set; } = new();
+		[JsonPropertyName("parameters")] public ProtocolParameters Parameters { get; set; } = new();
 	}
 
 	public partial class ProtocolParameters
 	{
-		[JsonPropertyName("http_parameters")]
-		public HttpParameters HttpParameters { get; set; } = new();
+		[JsonPropertyName("http_parameters")] public HttpParameters HttpParameters { get; set; } = new();
 	}
 
 	public partial class HttpParameters
 	{
-		[JsonPropertyName("parameters")]
-		public HttpParametersParameters Parameters { get; set; } = new();
+		[JsonPropertyName("parameters")] public HttpParametersParameters Parameters { get; set; } = new();
 	}
 
 	public partial class HttpParametersParameters
 	{
-		[JsonPropertyName("hls_parameters")]
-		public HlsParameters HlsParameters { get; set; } = new();
+		[JsonPropertyName("hls_parameters")] public HlsParameters HlsParameters { get; set; } = new();
 	}
 
 	public partial class HlsParameters
 	{
-		[JsonPropertyName("use_well_known_port")]
-		public string UseWellKnownPort { get; set; }
+		[JsonPropertyName("use_well_known_port")] public string UseWellKnownPort { get; set; }
 
-		[JsonPropertyName("use_ssl")]
-		public string UseSsl { get; set; }
+		[JsonPropertyName("use_ssl")] public string UseSsl { get; set; }
 
-		[JsonPropertyName("transfer_preset")]
-		public string TransferPreset { get; set; }
+		[JsonPropertyName("transfer_preset")] public string TransferPreset { get; set; }
 
-		[JsonPropertyName("segment_duration")]
-		public long? SegmentDuration { get; set; }
+		[JsonPropertyName("segment_duration")] public long? SegmentDuration { get; set; }
 	}
 
 	public partial class SessionOperationAuth
@@ -208,10 +175,8 @@ public class SessionCreateHLS
 
 	public partial class SessionOperationAuthBySignature
 	{
-		[JsonPropertyName("token")]
-		public string Token { get; set; }
+		[JsonPropertyName("token")] public string Token { get; set; }
 
-		[JsonPropertyName("signature")]
-		public string Signature { get; set; }
+		[JsonPropertyName("signature")] public string Signature { get; set; }
 	}
 }

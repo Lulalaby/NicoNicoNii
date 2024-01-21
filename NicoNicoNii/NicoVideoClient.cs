@@ -24,7 +24,7 @@ public class NicoVideoClient
 	/// <returns>WatchPage object</returns>
 	public async Task<WatchPageData> GetWatchPageInfoAsync(string videoId)
 	{
-		var pageResponse = await this._nndClient._client.GetAsync($"https://www.nicovideo.jp/watch/{videoId}", System.Net.Http.HttpCompletionOption.ResponseHeadersRead);
+		var pageResponse = await this._nndClient._client.GetAsync($"https://www.nicovideo.jp/watch/{videoId}", HttpCompletionOption.ResponseHeadersRead);
 
 		if (!pageResponse.IsSuccessStatusCode)
 			return default;
@@ -69,10 +69,8 @@ public class NicoVideoClient
 
 		var loggedIn = false;
 		if (this._nndClient.LoginDate != null
-			&& (DateTimeOffset.UtcNow.DateTime - this._nndClient.LoginDate?.DateTime)?.Hours < 5)
-		{
+		    && (DateTimeOffset.UtcNow.DateTime - this._nndClient.LoginDate?.DateTime)?.Hours < 5)
 			loggedIn = true;
-		}
 
 		var json = JsonSerializer.Serialize(new SessionCreateHTTP(watchPageData, audioQualities, videoQualities, loggedIn));
 		using var content = new StringContent(json, Encoding.UTF8, "application/json");
@@ -98,10 +96,8 @@ public class NicoVideoClient
 
 		var loggedIn = false;
 		if (this._nndClient.LoginDate != null
-			&& (DateTimeOffset.UtcNow.DateTime - this._nndClient.LoginDate?.DateTime)?.Hours < 5)
-		{
+		    && (DateTimeOffset.UtcNow.DateTime - this._nndClient.LoginDate?.DateTime)?.Hours < 5)
 			loggedIn = true;
-		}
 
 		var json = JsonSerializer.Serialize(new SessionCreateHLS(watchPageData, audioQualities, videoQualities, loggedIn));
 		using var content = new StringContent(json, Encoding.UTF8, "application/json");

@@ -16,7 +16,6 @@ public class NNDClient
 
 	public LoginSessionData LoginSessionData { get; internal set; }
 
-
 	public NNDClient()
 	{
 		var cc = new CookieContainer();
@@ -28,13 +27,13 @@ public class NNDClient
 			UseDefaultCredentials = false
 		};
 		this._handler = handler;
-		this._client = new HttpClient(handler);
+		this._client = new(handler);
 	}
 
 	public NNDClient(HttpClientHandler handler)
 	{
 		this._handler = handler;
-		this._client = new HttpClient(handler);
+		this._client = new(handler);
 	}
 
 	public async Task<LoginSessionData> LoginAsync(string emailTel, string password)
@@ -42,11 +41,11 @@ public class NNDClient
 		using var cont = new StringContent($"mail={emailTel}&password={password}&site=nicometro", Encoding.UTF8, "application/x-www-form-urlencoded");
 		using var msg = new HttpRequestMessage(HttpMethod.Post, "https://account.nicovideo.jp/login/redirector");
 		msg.Content = cont;
-		var response = await _client.SendAsync(msg);
+		var response = await this._client.SendAsync(msg);
 		var serializer = new XmlSerializer(typeof(LoginSessionData));
 		var loginData = serializer.Deserialize(await response.Content.ReadAsStreamAsync()) as LoginSessionData;
 		this.LoginSessionData = loginData;
-		this._handler.CookieContainer.Add(new Uri("http://api.ce.nicovideo.jp"), new Cookie("user_session", this.LoginSessionData.SessionKey, "/", "nicovideo.jp"));
+		this._handler.CookieContainer.Add(new("http://api.ce.nicovideo.jp"), new Cookie("user_session", this.LoginSessionData.SessionKey, "/", "nicovideo.jp"));
 		this.LoginDate = DateTimeOffset.UtcNow;
 		return loginData;
 	}
