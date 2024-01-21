@@ -59,7 +59,7 @@ public sealed class NoMemberRequest
 
 	[JsonPropertyName("additionalParameters")] public AdditionalParametersClass AdditionalParameters { get; set; } = new();
 
-	public sealed partial class AdditionalParametersClass
+	public sealed class AdditionalParametersClass
 	{
 		[JsonPropertyName("player_type")] public string PlayerType { get; set; }
 
@@ -126,7 +126,7 @@ public sealed class NoMemberRequest
 		[JsonPropertyName("viewing_source_detail")] public QueryParameters ViewingSourceDetail { get; set; } = new();
 	}
 
-	public sealed partial class Performance
+	public sealed class Performance
 	{
 		[JsonPropertyName("watch_access_start")] public long? WatchAccessStart { get; set; }
 
@@ -151,7 +151,7 @@ public sealed class NoMemberRequest
 		[JsonPropertyName("end_context")] public EndContext EndContext { get; set; } = new();
 	}
 
-	public sealed partial class EndContext
+	public sealed class EndContext
 	{
 		[JsonPropertyName("ad_playing")] public bool? AdPlaying { get; set; }
 
@@ -160,6 +160,6 @@ public sealed class NoMemberRequest
 		[JsonPropertyName("is_suspending")] public bool? IsSuspending { get; set; }
 	}
 
-	public sealed partial class QueryParameters
+	public sealed class QueryParameters
 	{ }
 }

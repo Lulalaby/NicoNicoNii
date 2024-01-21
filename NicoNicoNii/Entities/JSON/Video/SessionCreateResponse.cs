@@ -8,12 +8,12 @@ public sealed class SessionCreateResponse
 
 	[JsonPropertyName("data")] public DataClass Data { get; set; }
 
-	public sealed partial class DataClass
+	public sealed class DataClass
 	{
 		[JsonPropertyName("session")] public Session Session { get; set; }
 	}
 
-	public sealed partial class Session
+	public sealed class Session
 	{
 		[JsonPropertyName("id")] public string Id { get; set; }
 
@@ -60,7 +60,7 @@ public sealed class SessionCreateResponse
 		[JsonPropertyName("content_status")] public string ContentStatus { get; set; }
 	}
 
-	public sealed partial class ClientInfo
+	public sealed class ClientInfo
 	{
 		[JsonPropertyName("player_id")] public string PlayerId { get; set; }
 
@@ -69,7 +69,7 @@ public sealed class SessionCreateResponse
 		[JsonPropertyName("tracking_info")] public string TrackingInfo { get; set; }
 	}
 
-	public sealed partial class ContentAuth
+	public sealed class ContentAuth
 	{
 		[JsonPropertyName("auth_type")] public string AuthType { get; set; }
 
@@ -84,7 +84,7 @@ public sealed class SessionCreateResponse
 		[JsonPropertyName("content_auth_info")] public ContentAuthInfo ContentAuthInfo { get; set; }
 	}
 
-	public sealed partial class ContentAuthInfo
+	public sealed class ContentAuthInfo
 	{
 		[JsonPropertyName("method")] public string Method { get; set; }
 
@@ -93,31 +93,31 @@ public sealed class SessionCreateResponse
 		[JsonPropertyName("value")] public string Value { get; set; }
 	}
 
-	public sealed partial class ContentSrcIdSet
+	public sealed class ContentSrcIdSet
 	{
 		[JsonPropertyName("content_src_ids")] public List<ContentSrcId> ContentSrcIds { get; set; } = new();
 
 		[JsonPropertyName("allow_subset")] public string AllowSubset { get; set; }
 	}
 
-	public sealed partial class ContentSrcId
+	public sealed class ContentSrcId
 	{
 		[JsonPropertyName("src_id_to_mux")] public SrcIdToMux SrcIdToMux { get; set; }
 	}
 
-	public sealed partial class SrcIdToMux
+	public sealed class SrcIdToMux
 	{
 		[JsonPropertyName("video_src_ids")] public List<string> VideoSrcIds { get; set; } = new();
 
 		[JsonPropertyName("audio_src_ids")] public List<string> AudioSrcIds { get; set; } = new();
 	}
 
-	public sealed partial class KeepMethod
+	public sealed class KeepMethod
 	{
 		[JsonPropertyName("heartbeat")] public Heartbeat Heartbeat { get; set; }
 	}
 
-	public sealed partial class Heartbeat
+	public sealed class Heartbeat
 	{
 		[JsonPropertyName("lifetime")] public long? Lifetime { get; set; }
 
@@ -127,39 +127,39 @@ public sealed class SessionCreateResponse
 		public long? DeletionTimeoutOnNoStream { get; set; }
 	}
 
-	public sealed partial class PlayControlRange
+	public sealed class PlayControlRange
 	{
 		[JsonPropertyName("max_play_speed")] public double? MaxPlaySpeed { get; set; }
 
 		[JsonPropertyName("min_play_speed")] public double? MinPlaySpeed { get; set; }
 	}
 
-	public sealed partial class Protocol
+	public sealed class Protocol
 	{
 		[JsonPropertyName("name")] public string Name { get; set; }
 
 		[JsonPropertyName("parameters")] public ProtocolParameters Parameters { get; set; }
 	}
 
-	public sealed partial class ProtocolParameters
+	public sealed class ProtocolParameters
 	{
 		[JsonPropertyName("http_parameters")] public HttpParameters HttpParameters { get; set; }
 	}
 
-	public sealed partial class HttpParameters
+	public sealed class HttpParameters
 	{
 		[JsonPropertyName("method")] public string Method { get; set; }
 
 		[JsonPropertyName("parameters")] public HttpParametersParameters Parameters { get; set; }
 	}
 
-	public sealed partial class HttpParametersParameters
+	public sealed class HttpParametersParameters
 	{
 		[JsonPropertyName("http_output_download_parameters")]
 		public HttpOutputDownloadParameters HttpOutputDownloadParameters { get; set; }
 	}
 
-	public sealed partial class HttpOutputDownloadParameters
+	public sealed class HttpOutputDownloadParameters
 	{
 		[JsonPropertyName("file_extension")] public string FileExtension { get; set; }
 
@@ -170,7 +170,7 @@ public sealed class SessionCreateResponse
 		[JsonPropertyName("use_well_known_port")] public string UseWellKnownPort { get; set; }
 	}
 
-	public sealed partial class RuntimeInfo
+	public sealed class RuntimeInfo
 	{
 		[JsonPropertyName("node_id")] public string NodeId { get; set; }
 
@@ -179,13 +179,13 @@ public sealed class SessionCreateResponse
 		[JsonPropertyName("thumbnailer_state")] public List<object> ThumbnailerState { get; set; } = new();
 	}
 
-	public sealed partial class SessionOperationAuth
+	public sealed class SessionOperationAuth
 	{
 		[JsonPropertyName("session_operation_auth_by_signature")]
 		public SessionOperationAuthBySignature SessionOperationAuthBySignature { get; set; }
 	}
 
-	public sealed partial class SessionOperationAuthBySignature
+	public sealed class SessionOperationAuthBySignature
 	{
 		[JsonPropertyName("created_time")] public long? CreatedTime { get; set; }
 
@@ -196,7 +196,7 @@ public sealed class SessionCreateResponse
 		[JsonPropertyName("signature")] public string Signature { get; set; }
 	}
 
-	public sealed partial class MetaClass
+	public sealed class MetaClass
 	{
 		[JsonPropertyName("status")] public long? Status { get; set; }
 

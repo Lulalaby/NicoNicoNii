@@ -5,9 +5,9 @@ namespace NicoNicoNii.Entities.JSON.Video;
 //POST
 //https://api.dmc.nico/api/sessions?_format=json
 //HTTP Protocol
-public sealed class SessionCreateHTTP
+public sealed class SessionCreateHttp
 {
-	public SessionCreateHTTP(WatchPageData watchPage, string[] audioQuality, string[] videoQuality, bool loggedIn)
+	public SessionCreateHttp(WatchPageData watchPage, IEnumerable<string> audioQuality, IEnumerable<string> videoQuality, bool loggedIn)
 	{
 		this.Session.RecipeId = watchPage.Media.Delivery.RecipeId;
 		this.Session.ContentId = watchPage.Media.Delivery.Movie.ContentId;
@@ -61,7 +61,7 @@ public sealed class SessionCreateHTTP
 
 	[JsonPropertyName("session")] public SessionClass Session { get; set; } = new();
 
-	public sealed partial class SessionClass
+	public sealed class SessionClass
 	{
 		[JsonPropertyName("recipe_id")] public string RecipeId { get; set; }
 
@@ -88,12 +88,12 @@ public sealed class SessionCreateHTTP
 		[JsonPropertyName("priority")] public double? Priority { get; set; }
 	}
 
-	public sealed partial class ClientInfo
+	public sealed class ClientInfo
 	{
 		[JsonPropertyName("player_id")] public string PlayerId { get; set; }
 	}
 
-	public sealed partial class ContentAuth
+	public sealed class ContentAuth
 	{
 		[JsonPropertyName("auth_type")] public string AuthType { get; set; }
 
@@ -104,57 +104,57 @@ public sealed class SessionCreateHTTP
 		[JsonPropertyName("service_user_id")] public string ServiceUserId { get; set; }
 	}
 
-	public sealed partial class ContentSrcIdSet
+	public sealed class ContentSrcIdSet
 	{
 		[JsonPropertyName("content_src_ids")] public ContentSrcId[] ContentSrcIds { get; set; }
 	}
 
-	public sealed partial class ContentSrcId
+	public sealed class ContentSrcId
 	{
 		[JsonPropertyName("src_id_to_mux")] public SrcIdToMux SrcIdToMux { get; set; } = new();
 	}
 
-	public sealed partial class SrcIdToMux
+	public sealed class SrcIdToMux
 	{
 		[JsonPropertyName("video_src_ids")] public IEnumerable<string> VideoSrcIds { get; set; }
 
 		[JsonPropertyName("audio_src_ids")] public IEnumerable<string> AudioSrcIds { get; set; }
 	}
 
-	public sealed partial class KeepMethod
+	public sealed class KeepMethod
 	{
 		[JsonPropertyName("heartbeat")] public Heartbeat Heartbeat { get; set; } = new();
 	}
 
-	public sealed partial class Heartbeat
+	public sealed class Heartbeat
 	{
 		[JsonPropertyName("lifetime")] public long? Lifetime { get; set; }
 	}
 
-	public sealed partial class Protocol
+	public sealed class Protocol
 	{
 		[JsonPropertyName("name")] public string Name { get; set; }
 
 		[JsonPropertyName("parameters")] public ProtocolParameters Parameters { get; set; } = new();
 	}
 
-	public sealed partial class ProtocolParameters
+	public sealed class ProtocolParameters
 	{
 		[JsonPropertyName("http_parameters")] public HttpParameters HttpParameters { get; set; } = new();
 	}
 
-	public sealed partial class HttpParameters
+	public sealed class HttpParameters
 	{
 		[JsonPropertyName("parameters")] public HttpParametersParameters Parameters { get; set; } = new();
 	}
 
-	public sealed partial class HttpParametersParameters
+	public sealed class HttpParametersParameters
 	{
 		[JsonPropertyName("http_output_download_parameters")]
 		public HttpOutputDownloadParameters HttpOutputDownloadParameters { get; set; } = new();
 	}
 
-	public sealed partial class HttpOutputDownloadParameters
+	public sealed class HttpOutputDownloadParameters
 	{
 		[JsonPropertyName("use_well_known_port")] public string UseWellKnownPort { get; set; }
 
@@ -163,13 +163,13 @@ public sealed class SessionCreateHTTP
 		[JsonPropertyName("transfer_preset")] public string TransferPreset { get; set; }
 	}
 
-	public sealed partial class SessionOperationAuth
+	public sealed class SessionOperationAuth
 	{
 		[JsonPropertyName("session_operation_auth_by_signature")]
 		public SessionOperationAuthBySignature SessionOperationAuthBySignature { get; set; } = new();
 	}
 
-	public sealed partial class SessionOperationAuthBySignature
+	public sealed class SessionOperationAuthBySignature
 	{
 		[JsonPropertyName("token")] public string Token { get; set; }
 

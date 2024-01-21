@@ -67,10 +67,8 @@ public class NicoVideoClient
 		videoQualities ??= watchPageData.Media.Delivery.Movie.Session.Videos.ToArray();
 		audioQualities ??= watchPageData.Media.Delivery.Movie.Session.Audios.ToArray();
 
-		var loggedIn = false;
-		if (this.nndClient.LoginDate != null
-		    && (DateTimeOffset.UtcNow.DateTime - this.nndClient.LoginDate?.DateTime)?.Hours < 5)
-			loggedIn = true;
+		var loggedIn = this.nndClient.LoginDate is not null
+		               && (DateTimeOffset.UtcNow.DateTime - this.nndClient.LoginDate?.DateTime)?.Hours < 5;
 
 		var json = JsonSerializer.Serialize(new SessionCreateHttp(watchPageData, audioQualities, videoQualities, loggedIn));
 		using var content = new StringContent(json, Encoding.UTF8, "application/json");
@@ -94,10 +92,8 @@ public class NicoVideoClient
 		videoQualities ??= watchPageData.Media.Delivery.Movie.Session.Videos.ToArray();
 		audioQualities ??= watchPageData.Media.Delivery.Movie.Session.Audios.ToArray();
 
-		var loggedIn = false;
-		if (this.nndClient.LoginDate != null
-		    && (DateTimeOffset.UtcNow.DateTime - this.nndClient.LoginDate?.DateTime)?.Hours < 5)
-			loggedIn = true;
+		var loggedIn = this.nndClient.LoginDate is not null
+		               && (DateTimeOffset.UtcNow.DateTime - this.nndClient.LoginDate?.DateTime)?.Hours < 5;
 
 		var json = JsonSerializer.Serialize(new SessionCreateHls(watchPageData, audioQualities, videoQualities, loggedIn));
 		using var content = new StringContent(json, Encoding.UTF8, "application/json");
