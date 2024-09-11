@@ -5,8 +5,15 @@ namespace NicoNicoNii.Entities.XML;
 [XmlRoot(ElementName = "nicovideo_user_response")]
 public class LoginSessionData
 {
-	[XmlElement(ElementName = "session_key")] public string SessionKey { get; set; }
-	[XmlElement(ElementName = "expire")] public string Expire { get; set; }
-	[XmlElement(ElementName = "user_id")] public string UserId { get; set; }
-	[XmlAttribute(AttributeName = "status")] public string Status { get; set; }
+    [XmlElement(ElementName = "session_key")]
+    public string SessionKey { get; set; }
+
+    [XmlElement(ElementName = "expire")]
+    public string Expire { get; set; }
+
+    [XmlElement(ElementName = "user_id")]
+    public string UserId { get; set; }
+
+    [XmlAttribute(AttributeName = "status")]
+    public string Status { get; set; }
 }

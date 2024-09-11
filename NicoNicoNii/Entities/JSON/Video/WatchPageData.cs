@@ -4,839 +4,1149 @@ namespace NicoNicoNii.Entities.JSON.Video;
 
 public sealed class WatchPageData
 {
-	[JsonPropertyName("ads")] public object Ads { get; set; }
+    [JsonPropertyName("ads")]
+    public object Ads { get; set; }
 
-	[JsonPropertyName("category")] public object Category { get; set; }
+    [JsonPropertyName("category")]
+    public object Category { get; set; }
 
-	[JsonPropertyName("channel")] public object Channel { get; set; }
+    [JsonPropertyName("channel")]
+    public object Channel { get; set; }
 
-	[JsonPropertyName("client")] public ClientClass Client { get; set; }
+    [JsonPropertyName("client")]
+    public ClientClass Client { get; set; }
 
-	[JsonPropertyName("comment")] public TemperaturesComment Comment { get; set; }
+    [JsonPropertyName("comment")]
+    public TemperaturesComment Comment { get; set; }
 
-	[JsonPropertyName("community")] public CommunityClass Community { get; set; }
+    [JsonPropertyName("community")]
+    public CommunityClass Community { get; set; }
 
-	[JsonPropertyName("easyComment")] public EasyCommentClass EasyComment { get; set; }
+    [JsonPropertyName("easyComment")]
+    public EasyCommentClass EasyComment { get; set; }
 
-	[JsonPropertyName("external")] public ExternalClass External { get; set; }
+    [JsonPropertyName("external")]
+    public ExternalClass External { get; set; }
 
-	[JsonPropertyName("genre")] public TemperaturesGenre Genre { get; set; }
+    [JsonPropertyName("genre")]
+    public TemperaturesGenre Genre { get; set; }
 
-	[JsonPropertyName("marquee")] public MarqueeClass Marquee { get; set; }
+    [JsonPropertyName("marquee")]
+    public MarqueeClass Marquee { get; set; }
 
-	[JsonPropertyName("media")] public MediaClass Media { get; set; }
+    [JsonPropertyName("media")]
+    public MediaClass Media { get; set; }
 
-	[JsonPropertyName("okReason")] public string OkReason { get; set; }
+    [JsonPropertyName("okReason")]
+    public string OkReason { get; set; }
 
-	[JsonPropertyName("owner")] public TemperaturesOwner Owner { get; set; }
+    [JsonPropertyName("owner")]
+    public TemperaturesOwner Owner { get; set; }
 
-	[JsonPropertyName("payment")] public PaymentClass Payment { get; set; }
+    [JsonPropertyName("payment")]
+    public PaymentClass Payment { get; set; }
 
-	[JsonPropertyName("pcWatchPage")] public PcWatchPageClass PcWatchPage { get; set; }
+    [JsonPropertyName("pcWatchPage")]
+    public PcWatchPageClass PcWatchPage { get; set; }
 
-	[JsonPropertyName("player")] public PlayerClass Player { get; set; }
+    [JsonPropertyName("player")]
+    public PlayerClass Player { get; set; }
 
-	[JsonPropertyName("ppv")] public object Ppv { get; set; }
+    [JsonPropertyName("ppv")]
+    public object Ppv { get; set; }
 
-	[JsonPropertyName("ranking")] public RankingClass Ranking { get; set; }
+    [JsonPropertyName("ranking")]
+    public RankingClass Ranking { get; set; }
 
-	[JsonPropertyName("series")] public SeriesClass Series { get; set; }
+    [JsonPropertyName("series")]
+    public SeriesClass Series { get; set; }
 
-	[JsonPropertyName("smartphone")] public object Smartphone { get; set; }
+    [JsonPropertyName("smartphone")]
+    public object Smartphone { get; set; }
 
-	[JsonPropertyName("system")] public SystemClass System { get; set; }
+    [JsonPropertyName("system")]
+    public SystemClass System { get; set; }
 
-	[JsonPropertyName("tag")] public TagClass Tag { get; set; }
+    [JsonPropertyName("tag")]
+    public TagClass Tag { get; set; }
 
-	[JsonPropertyName("video")] public TemperaturesVideo Video { get; set; }
+    [JsonPropertyName("video")]
+    public TemperaturesVideo Video { get; set; }
 
-	[JsonPropertyName("videoAds")] public VideoAdsClass VideoAds { get; set; }
+    [JsonPropertyName("videoAds")]
+    public VideoAdsClass VideoAds { get; set; }
 
-	[JsonPropertyName("videoLive")] public object VideoLive { get; set; }
+    [JsonPropertyName("videoLive")]
+    public object VideoLive { get; set; }
 
-	[JsonPropertyName("viewer")] public TemperaturesViewer Viewer { get; set; }
+    [JsonPropertyName("viewer")]
+    public TemperaturesViewer Viewer { get; set; }
 
-	[JsonPropertyName("waku")] public WakuClass Waku { get; set; }
+    [JsonPropertyName("waku")]
+    public WakuClass Waku { get; set; }
 
-	public sealed class ClientClass
-	{
-		[JsonPropertyName("nicosid")] public string Nicosid { get; set; }
+    public sealed class ClientClass
+    {
+        [JsonPropertyName("nicosid")]
+        public string Nicosid { get; set; }
 
-		[JsonPropertyName("watchId")] public string WatchId { get; set; }
+        [JsonPropertyName("watchId")]
+        public string WatchId { get; set; }
 
-		[JsonPropertyName("watchTrackId")] public string WatchTrackId { get; set; }
-	}
+        [JsonPropertyName("watchTrackId")]
+        public string WatchTrackId { get; set; }
+    }
 
-	public sealed class TemperaturesComment
-	{
-		[JsonPropertyName("server")] public Server Server { get; set; }
+    public sealed class TemperaturesComment
+    {
+        [JsonPropertyName("server")]
+        public Server Server { get; set; }
 
-		[JsonPropertyName("keys")] public Keys Keys { get; set; }
+        [JsonPropertyName("keys")]
+        public Keys Keys { get; set; }
 
-		[JsonPropertyName("layers")] public List<Layer> Layers { get; set; } = new();
+        [JsonPropertyName("layers")]
+        public List<Layer> Layers { get; set; } = new();
 
-		[JsonPropertyName("threads")] public List<Thread> Threads { get; set; } = new();
+        [JsonPropertyName("threads")]
+        public List<Thread> Threads { get; set; } = new();
 
-		[JsonPropertyName("ng")] public Ng Ng { get; set; }
+        [JsonPropertyName("ng")]
+        public Ng Ng { get; set; }
 
-		[JsonPropertyName("isAttentionRequired")] public bool? IsAttentionRequired { get; set; }
-	}
+        [JsonPropertyName("isAttentionRequired")]
+        public bool? IsAttentionRequired { get; set; }
+    }
 
-	public sealed class Keys
-	{
-		[JsonPropertyName("userKey")] public string UserKey { get; set; }
-	}
+    public sealed class Keys
+    {
+        [JsonPropertyName("userKey")]
+        public string UserKey { get; set; }
+    }
 
-	public sealed class Layer
-	{
-		[JsonPropertyName("index")] public long? Index { get; set; }
+    public sealed class Layer
+    {
+        [JsonPropertyName("index")]
+        public long? Index { get; set; }
 
-		[JsonPropertyName("isTranslucent")] public bool? IsTranslucent { get; set; }
+        [JsonPropertyName("isTranslucent")]
+        public bool? IsTranslucent { get; set; }
 
-		[JsonPropertyName("threadIds")] public List<ThreadId> ThreadIds { get; set; } = new();
-	}
+        [JsonPropertyName("threadIds")]
+        public List<ThreadId> ThreadIds { get; set; } = new();
+    }
 
-	public sealed class ThreadId
-	{
-		[JsonPropertyName("id")] public long? Id { get; set; }
+    public sealed class ThreadId
+    {
+        [JsonPropertyName("id")]
+        public long? Id { get; set; }
 
-		[JsonPropertyName("fork")] public long? Fork { get; set; }
-	}
+        [JsonPropertyName("fork")]
+        public long? Fork { get; set; }
+    }
 
-	public sealed class Ng
-	{
-		[JsonPropertyName("ngScore")] public NgScore NgScore { get; set; }
+    public sealed class Ng
+    {
+        [JsonPropertyName("ngScore")]
+        public NgScore NgScore { get; set; }
 
-		[JsonPropertyName("channel")] public List<object> Channel { get; set; } = new();
+        [JsonPropertyName("channel")]
+        public List<object> Channel { get; set; } = new();
 
-		[JsonPropertyName("owner")] public List<object> Owner { get; set; } = new();
+        [JsonPropertyName("owner")]
+        public List<object> Owner { get; set; } = new();
 
-		[JsonPropertyName("viewer")] public NgViewer Viewer { get; set; }
-	}
+        [JsonPropertyName("viewer")]
+        public NgViewer Viewer { get; set; }
+    }
 
-	public sealed class NgScore
-	{
-		[JsonPropertyName("isDisabled")] public bool? IsDisabled { get; set; }
-	}
+    public sealed class NgScore
+    {
+        [JsonPropertyName("isDisabled")]
+        public bool? IsDisabled { get; set; }
+    }
 
-	public sealed class NgViewer
-	{
-		[JsonPropertyName("revision")] public long? Revision { get; set; }
+    public sealed class NgViewer
+    {
+        [JsonPropertyName("revision")]
+        public long? Revision { get; set; }
 
-		[JsonPropertyName("count")] public long? Count { get; set; }
+        [JsonPropertyName("count")]
+        public long? Count { get; set; }
 
-		[JsonPropertyName("items")] public List<object> Items { get; set; } = new();
-	}
+        [JsonPropertyName("items")]
+        public List<object> Items { get; set; } = new();
+    }
 
-	public sealed class Server
-	{
-		[JsonPropertyName("url")] public Uri Url { get; set; }
-	}
+    public sealed class Server
+    {
+        [JsonPropertyName("url")]
+        public Uri Url { get; set; }
+    }
 
-	public sealed class Thread
-	{
-		[JsonPropertyName("id")] public long? Id { get; set; }
+    public sealed class Thread
+    {
+        [JsonPropertyName("id")]
+        public long? Id { get; set; }
 
-		[JsonPropertyName("fork")] public long? Fork { get; set; }
+        [JsonPropertyName("fork")]
+        public long? Fork { get; set; }
 
-		[JsonPropertyName("isActive")] public bool? IsActive { get; set; }
+        [JsonPropertyName("isActive")]
+        public bool? IsActive { get; set; }
 
-		[JsonPropertyName("isDefaultPostTarget")] public bool? IsDefaultPostTarget { get; set; }
+        [JsonPropertyName("isDefaultPostTarget")]
+        public bool? IsDefaultPostTarget { get; set; }
+
+        [JsonPropertyName("isEasyCommentPostTarget")]
+        public bool? IsEasyCommentPostTarget { get; set; }
 
-		[JsonPropertyName("isEasyCommentPostTarget")] public bool? IsEasyCommentPostTarget { get; set; }
+        [JsonPropertyName("isLeafRequired")]
+        public bool? IsLeafRequired { get; set; }
 
-		[JsonPropertyName("isLeafRequired")] public bool? IsLeafRequired { get; set; }
+        [JsonPropertyName("isOwnerThread")]
+        public bool? IsOwnerThread { get; set; }
 
-		[JsonPropertyName("isOwnerThread")] public bool? IsOwnerThread { get; set; }
+        [JsonPropertyName("isThreadkeyRequired")]
+        public bool? IsThreadkeyRequired { get; set; }
 
-		[JsonPropertyName("isThreadkeyRequired")] public bool? IsThreadkeyRequired { get; set; }
+        [JsonPropertyName("threadkey")]
+        public object Threadkey { get; set; }
 
-		[JsonPropertyName("threadkey")] public object Threadkey { get; set; }
+        [JsonPropertyName("is184Forced")]
+        public bool? Is184Forced { get; set; }
 
-		[JsonPropertyName("is184Forced")] public bool? Is184Forced { get; set; }
+        [JsonPropertyName("hasNicoscript")]
+        public bool? HasNicoscript { get; set; }
 
-		[JsonPropertyName("hasNicoscript")] public bool? HasNicoscript { get; set; }
+        [JsonPropertyName("label")]
+        public string Label { get; set; }
 
-		[JsonPropertyName("label")] public string Label { get; set; }
+        [JsonPropertyName("postkeyStatus")]
+        public long? PostkeyStatus { get; set; }
 
-		[JsonPropertyName("postkeyStatus")] public long? PostkeyStatus { get; set; }
+        [JsonPropertyName("server")]
+        public Uri Server { get; set; }
+    }
 
-		[JsonPropertyName("server")] public Uri Server { get; set; }
-	}
+    public sealed class CommunityClass
+    {
+        [JsonPropertyName("main")]
+        public Main Main { get; set; }
+
+        [JsonPropertyName("belong")]
+        public object Belong { get; set; }
+    }
+
+    public sealed class Main
+    {
+        [JsonPropertyName("id")]
+        public string Id { get; set; }
 
-	public sealed class CommunityClass
-	{
-		[JsonPropertyName("main")] public Main Main { get; set; }
+        [JsonPropertyName("name")]
+        public string Name { get; set; }
+    }
 
-		[JsonPropertyName("belong")] public object Belong { get; set; }
-	}
+    public sealed class EasyCommentClass
+    {
+        [JsonPropertyName("phrases")]
+        public List<Phrase> Phrases { get; set; } = new();
+    }
 
-	public sealed class Main
-	{
-		[JsonPropertyName("id")] public string Id { get; set; }
+    public sealed class Phrase
+    {
+        [JsonPropertyName("text")]
+        public string Text { get; set; }
 
-		[JsonPropertyName("name")] public string Name { get; set; }
-	}
+        [JsonPropertyName("nicodic")]
+        public Nicodic Nicodic { get; set; }
+    }
 
-	public sealed class EasyCommentClass
-	{
-		[JsonPropertyName("phrases")] public List<Phrase> Phrases { get; set; } = new();
-	}
+    public sealed class Nicodic
+    {
+        [JsonPropertyName("title")]
+        public string Title { get; set; }
 
-	public sealed class Phrase
-	{
-		[JsonPropertyName("text")] public string Text { get; set; }
+        [JsonPropertyName("viewTitle")]
+        public string ViewTitle { get; set; }
 
-		[JsonPropertyName("nicodic")] public Nicodic Nicodic { get; set; }
-	}
+        [JsonPropertyName("summary")]
+        public string Summary { get; set; }
 
-	public sealed class Nicodic
-	{
-		[JsonPropertyName("title")] public string Title { get; set; }
+        [JsonPropertyName("link")]
+        public Uri Link { get; set; }
+    }
 
-		[JsonPropertyName("viewTitle")] public string ViewTitle { get; set; }
+    public sealed class ExternalClass
+    {
+        [JsonPropertyName("commons")]
+        public Commons Commons { get; set; }
 
-		[JsonPropertyName("summary")] public string Summary { get; set; }
+        [JsonPropertyName("ichiba")]
+        public Ichiba Ichiba { get; set; }
+    }
 
-		[JsonPropertyName("link")] public Uri Link { get; set; }
-	}
+    public sealed class Commons
+    {
+        [JsonPropertyName("hasContentTree")]
+        public bool? HasContentTree { get; set; }
+    }
 
-	public sealed class ExternalClass
-	{
-		[JsonPropertyName("commons")] public Commons Commons { get; set; }
+    public sealed class Ichiba
+    {
+        [JsonPropertyName("isEnabled")]
+        public bool? IsEnabled { get; set; }
+    }
 
-		[JsonPropertyName("ichiba")] public Ichiba Ichiba { get; set; }
-	}
+    public sealed class TemperaturesGenre
+    {
+        [JsonPropertyName("key")]
+        public string Key { get; set; }
 
-	public sealed class Commons
-	{
-		[JsonPropertyName("hasContentTree")] public bool? HasContentTree { get; set; }
-	}
+        [JsonPropertyName("label")]
+        public string Label { get; set; }
 
-	public sealed class Ichiba
-	{
-		[JsonPropertyName("isEnabled")] public bool? IsEnabled { get; set; }
-	}
+        [JsonPropertyName("isImmoral")]
+        public bool? IsImmoral { get; set; }
 
-	public sealed class TemperaturesGenre
-	{
-		[JsonPropertyName("key")] public string Key { get; set; }
+        [JsonPropertyName("isDisabled")]
+        public bool? IsDisabled { get; set; }
 
-		[JsonPropertyName("label")] public string Label { get; set; }
+        [JsonPropertyName("isNotSet")]
+        public bool? IsNotSet { get; set; }
+    }
 
-		[JsonPropertyName("isImmoral")] public bool? IsImmoral { get; set; }
+    public sealed class MarqueeClass
+    {
+        [JsonPropertyName("isDisabled")]
+        public bool? IsDisabled { get; set; }
 
-		[JsonPropertyName("isDisabled")] public bool? IsDisabled { get; set; }
+        [JsonPropertyName("tagRelatedLead")]
+        public object TagRelatedLead { get; set; }
+    }
 
-		[JsonPropertyName("isNotSet")] public bool? IsNotSet { get; set; }
-	}
+    public sealed class MediaClass
+    {
+        [JsonPropertyName("delivery")]
+        public Delivery Delivery { get; set; }
 
-	public sealed class MarqueeClass
-	{
-		[JsonPropertyName("isDisabled")] public bool? IsDisabled { get; set; }
+        [JsonPropertyName("deliveryLegacy")]
+        public object DeliveryLegacy { get; set; }
+    }
 
-		[JsonPropertyName("tagRelatedLead")] public object TagRelatedLead { get; set; }
-	}
+    public sealed class Delivery
+    {
+        [JsonPropertyName("recipeId")]
+        public string RecipeId { get; set; }
 
-	public sealed class MediaClass
-	{
-		[JsonPropertyName("delivery")] public Delivery Delivery { get; set; }
+        [JsonPropertyName("encryption")]
+        public object Encryption { get; set; }
 
-		[JsonPropertyName("deliveryLegacy")] public object DeliveryLegacy { get; set; }
-	}
+        [JsonPropertyName("movie")]
+        public Movie Movie { get; set; }
 
-	public sealed class Delivery
-	{
-		[JsonPropertyName("recipeId")] public string RecipeId { get; set; }
+        [JsonPropertyName("storyboard")]
+        public Storyboard Storyboard { get; set; }
 
-		[JsonPropertyName("encryption")] public object Encryption { get; set; }
+        [JsonPropertyName("trackingId")]
+        public string TrackingId { get; set; }
+    }
 
-		[JsonPropertyName("movie")] public Movie Movie { get; set; }
+    public sealed class Movie
+    {
+        [JsonPropertyName("contentId")]
+        public string ContentId { get; set; }
 
-		[JsonPropertyName("storyboard")] public Storyboard Storyboard { get; set; }
+        [JsonPropertyName("audios")]
+        public List<Audio> Audios { get; set; } = new();
 
-		[JsonPropertyName("trackingId")] public string TrackingId { get; set; }
-	}
+        [JsonPropertyName("videos")]
+        public List<VideoElement> Videos { get; set; } = new();
 
-	public sealed class Movie
-	{
-		[JsonPropertyName("contentId")] public string ContentId { get; set; }
+        [JsonPropertyName("session")]
+        public MovieSession Session { get; set; }
+    }
 
-		[JsonPropertyName("audios")] public List<Audio> Audios { get; set; } = new();
+    public sealed class Audio
+    {
+        [JsonPropertyName("id")]
+        public string Id { get; set; }
 
-		[JsonPropertyName("videos")] public List<VideoElement> Videos { get; set; } = new();
+        [JsonPropertyName("isAvailable")]
+        public bool? IsAvailable { get; set; }
 
-		[JsonPropertyName("session")] public MovieSession Session { get; set; }
-	}
+        [JsonPropertyName("metadata")]
+        public AudioMetadata Metadata { get; set; }
+    }
 
-	public sealed class Audio
-	{
-		[JsonPropertyName("id")] public string Id { get; set; }
+    public sealed class AudioMetadata
+    {
+        [JsonPropertyName("bitrate")]
+        public long? Bitrate { get; set; }
 
-		[JsonPropertyName("isAvailable")] public bool? IsAvailable { get; set; }
+        [JsonPropertyName("samplingRate")]
+        public long? SamplingRate { get; set; }
 
-		[JsonPropertyName("metadata")] public AudioMetadata Metadata { get; set; }
-	}
+        [JsonPropertyName("loudness")]
+        public Loudness Loudness { get; set; }
 
-	public sealed class AudioMetadata
-	{
-		[JsonPropertyName("bitrate")] public long? Bitrate { get; set; }
+        [JsonPropertyName("levelIndex")]
+        public long? LevelIndex { get; set; }
 
-		[JsonPropertyName("samplingRate")] public long? SamplingRate { get; set; }
+        [JsonPropertyName("loudnessCollection")]
+        public List<LoudnessCollection> LoudnessCollection { get; set; } = new();
+    }
 
-		[JsonPropertyName("loudness")] public Loudness Loudness { get; set; }
+    public sealed class Loudness
+    {
+        [JsonPropertyName("integratedLoudness")]
+        public double? IntegratedLoudness { get; set; }
 
-		[JsonPropertyName("levelIndex")] public long? LevelIndex { get; set; }
+        [JsonPropertyName("truePeak")]
+        public double? TruePeak { get; set; }
+    }
 
-		[JsonPropertyName("loudnessCollection")] public List<LoudnessCollection> LoudnessCollection { get; set; } = new();
-	}
+    public sealed class LoudnessCollection
+    {
+        [JsonPropertyName("type")]
+        public string Type { get; set; }
 
-	public sealed class Loudness
-	{
-		[JsonPropertyName("integratedLoudness")] public double? IntegratedLoudness { get; set; }
+        [JsonPropertyName("value")]
+        public double? Value { get; set; }
+    }
 
-		[JsonPropertyName("truePeak")] public double? TruePeak { get; set; }
-	}
+    public sealed class MovieSession
+    {
+        [JsonPropertyName("recipeId")]
+        public string RecipeId { get; set; }
 
-	public sealed class LoudnessCollection
-	{
-		[JsonPropertyName("type")] public string Type { get; set; }
+        [JsonPropertyName("playerId")]
+        public string PlayerId { get; set; }
 
-		[JsonPropertyName("value")] public double? Value { get; set; }
-	}
+        [JsonPropertyName("videos")]
+        public List<string> Videos { get; set; } = new();
 
-	public sealed class MovieSession
-	{
-		[JsonPropertyName("recipeId")] public string RecipeId { get; set; }
+        [JsonPropertyName("audios")]
+        public List<string> Audios { get; set; } = new();
 
-		[JsonPropertyName("playerId")] public string PlayerId { get; set; }
+        [JsonPropertyName("movies")]
+        public List<object> Movies { get; set; } = new();
 
-		[JsonPropertyName("videos")] public List<string> Videos { get; set; } = new();
+        [JsonPropertyName("protocols")]
+        public List<string> Protocols { get; set; } = new();
 
-		[JsonPropertyName("audios")] public List<string> Audios { get; set; } = new();
+        [JsonPropertyName("authTypes")]
+        public PurpleAuthTypes AuthTypes { get; set; }
 
-		[JsonPropertyName("movies")] public List<object> Movies { get; set; } = new();
+        [JsonPropertyName("serviceUserId")]
+        public string ServiceUserId { get; set; }
 
-		[JsonPropertyName("protocols")] public List<string> Protocols { get; set; } = new();
+        [JsonPropertyName("token")]
+        public string Token { get; set; }
 
-		[JsonPropertyName("authTypes")] public PurpleAuthTypes AuthTypes { get; set; }
+        [JsonPropertyName("signature")]
+        public string Signature { get; set; }
 
-		[JsonPropertyName("serviceUserId")] public string ServiceUserId { get; set; }
+        [JsonPropertyName("contentId")]
+        public string ContentId { get; set; }
 
-		[JsonPropertyName("token")] public string Token { get; set; }
+        [JsonPropertyName("heartbeatLifetime")]
+        public long? HeartbeatLifetime { get; set; }
 
-		[JsonPropertyName("signature")] public string Signature { get; set; }
+        [JsonPropertyName("contentKeyTimeout")]
+        public long? ContentKeyTimeout { get; set; }
 
-		[JsonPropertyName("contentId")] public string ContentId { get; set; }
+        [JsonPropertyName("priority")]
+        public double? Priority { get; set; }
 
-		[JsonPropertyName("heartbeatLifetime")] public long? HeartbeatLifetime { get; set; }
+        [JsonPropertyName("transferPresets")]
+        public List<string> TransferPresets { get; set; } = new();
 
-		[JsonPropertyName("contentKeyTimeout")] public long? ContentKeyTimeout { get; set; }
+        [JsonPropertyName("urls")]
+        public List<Url> Urls { get; set; } = new();
+    }
 
-		[JsonPropertyName("priority")] public double? Priority { get; set; }
+    public sealed class PurpleAuthTypes
+    {
+        [JsonPropertyName("http")]
+        public string Http { get; set; }
 
-		[JsonPropertyName("transferPresets")] public List<string> TransferPresets { get; set; } = new();
+        [JsonPropertyName("hls")]
+        public string Hls { get; set; }
+    }
 
-		[JsonPropertyName("urls")] public List<Url> Urls { get; set; } = new();
-	}
+    public sealed class Url
+    {
+        [JsonPropertyName("url")]
+        public Uri UrlUrl { get; set; }
 
-	public sealed class PurpleAuthTypes
-	{
-		[JsonPropertyName("http")] public string Http { get; set; }
+        [JsonPropertyName("isWellKnownPort")]
+        public bool? IsWellKnownPort { get; set; }
 
-		[JsonPropertyName("hls")] public string Hls { get; set; }
-	}
+        [JsonPropertyName("isSsl")]
+        public bool? IsSsl { get; set; }
+    }
 
-	public sealed class Url
-	{
-		[JsonPropertyName("url")] public Uri UrlUrl { get; set; }
+    public sealed class VideoElement
+    {
+        [JsonPropertyName("id")]
+        public string Id { get; set; }
 
-		[JsonPropertyName("isWellKnownPort")] public bool? IsWellKnownPort { get; set; }
+        [JsonPropertyName("isAvailable")]
+        public bool? IsAvailable { get; set; }
 
-		[JsonPropertyName("isSsl")] public bool? IsSsl { get; set; }
-	}
+        [JsonPropertyName("metadata")]
+        public VideoMetadata Metadata { get; set; }
+    }
 
-	public sealed class VideoElement
-	{
-		[JsonPropertyName("id")] public string Id { get; set; }
+    public sealed class VideoMetadata
+    {
+        [JsonPropertyName("label")]
+        public string Label { get; set; }
 
-		[JsonPropertyName("isAvailable")] public bool? IsAvailable { get; set; }
+        [JsonPropertyName("bitrate")]
+        public long? Bitrate { get; set; }
 
-		[JsonPropertyName("metadata")] public VideoMetadata Metadata { get; set; }
-	}
+        [JsonPropertyName("resolution")]
+        public Resolution Resolution { get; set; }
 
-	public sealed class VideoMetadata
-	{
-		[JsonPropertyName("label")] public string Label { get; set; }
+        [JsonPropertyName("levelIndex")]
+        public long? LevelIndex { get; set; }
 
-		[JsonPropertyName("bitrate")] public long? Bitrate { get; set; }
+        [JsonPropertyName("recommendedHighestAudioLevelIndex")]
+        public long? RecommendedHighestAudioLevelIndex { get; set; }
+    }
 
-		[JsonPropertyName("resolution")] public Resolution Resolution { get; set; }
+    public sealed class Resolution
+    {
+        [JsonPropertyName("width")]
+        public long? Width { get; set; }
 
-		[JsonPropertyName("levelIndex")] public long? LevelIndex { get; set; }
+        [JsonPropertyName("height")]
+        public long? Height { get; set; }
+    }
 
-		[JsonPropertyName("recommendedHighestAudioLevelIndex")]
-		public long? RecommendedHighestAudioLevelIndex { get; set; }
-	}
+    public sealed class Storyboard
+    {
+        [JsonPropertyName("contentId")]
+        public string ContentId { get; set; }
 
-	public sealed class Resolution
-	{
-		[JsonPropertyName("width")] public long? Width { get; set; }
+        [JsonPropertyName("images")]
+        public List<Image> Images { get; set; } = new();
 
-		[JsonPropertyName("height")] public long? Height { get; set; }
-	}
+        [JsonPropertyName("session")]
+        public StoryboardSession Session { get; set; }
+    }
 
-	public sealed class Storyboard
-	{
-		[JsonPropertyName("contentId")] public string ContentId { get; set; }
+    public sealed class Image
+    {
+        [JsonPropertyName("id")]
+        public string Id { get; set; }
+    }
 
-		[JsonPropertyName("images")] public List<Image> Images { get; set; } = new();
+    public sealed class StoryboardSession
+    {
+        [JsonPropertyName("recipeId")]
+        public string RecipeId { get; set; }
 
-		[JsonPropertyName("session")] public StoryboardSession Session { get; set; }
-	}
+        [JsonPropertyName("playerId")]
+        public string PlayerId { get; set; }
 
-	public sealed class Image
-	{
-		[JsonPropertyName("id")] public string Id { get; set; }
-	}
+        [JsonPropertyName("videos")]
+        public List<string> Videos { get; set; } = new();
 
-	public sealed class StoryboardSession
-	{
-		[JsonPropertyName("recipeId")] public string RecipeId { get; set; }
+        [JsonPropertyName("audios")]
+        public List<object> Audios { get; set; } = new();
 
-		[JsonPropertyName("playerId")] public string PlayerId { get; set; }
+        [JsonPropertyName("movies")]
+        public List<object> Movies { get; set; } = new();
 
-		[JsonPropertyName("videos")] public List<string> Videos { get; set; } = new();
+        [JsonPropertyName("protocols")]
+        public List<string> Protocols { get; set; } = new();
 
-		[JsonPropertyName("audios")] public List<object> Audios { get; set; } = new();
+        [JsonPropertyName("authTypes")]
+        public FluffyAuthTypes AuthTypes { get; set; }
 
-		[JsonPropertyName("movies")] public List<object> Movies { get; set; } = new();
+        [JsonPropertyName("serviceUserId")]
+        public string ServiceUserId { get; set; }
 
-		[JsonPropertyName("protocols")] public List<string> Protocols { get; set; } = new();
+        [JsonPropertyName("token")]
+        public string Token { get; set; }
 
-		[JsonPropertyName("authTypes")] public FluffyAuthTypes AuthTypes { get; set; }
+        [JsonPropertyName("signature")]
+        public string Signature { get; set; }
 
-		[JsonPropertyName("serviceUserId")] public string ServiceUserId { get; set; }
+        [JsonPropertyName("contentId")]
+        public string ContentId { get; set; }
 
-		[JsonPropertyName("token")] public string Token { get; set; }
+        [JsonPropertyName("heartbeatLifetime")]
+        public long? HeartbeatLifetime { get; set; }
 
-		[JsonPropertyName("signature")] public string Signature { get; set; }
+        [JsonPropertyName("contentKeyTimeout")]
+        public long? ContentKeyTimeout { get; set; }
 
-		[JsonPropertyName("contentId")] public string ContentId { get; set; }
+        [JsonPropertyName("priority")]
+        public double? Priority { get; set; }
 
-		[JsonPropertyName("heartbeatLifetime")] public long? HeartbeatLifetime { get; set; }
+        [JsonPropertyName("transferPresets")]
+        public List<object> TransferPresets { get; set; } = new();
 
-		[JsonPropertyName("contentKeyTimeout")] public long? ContentKeyTimeout { get; set; }
+        [JsonPropertyName("urls")]
+        public List<Url> Urls { get; set; } = new();
+    }
 
-		[JsonPropertyName("priority")] public double? Priority { get; set; }
+    public sealed class FluffyAuthTypes
+    {
+        [JsonPropertyName("storyboard")]
+        public string Storyboard { get; set; }
+    }
 
-		[JsonPropertyName("transferPresets")] public List<object> TransferPresets { get; set; } = new();
+    public sealed class TemperaturesOwner
+    {
+        [JsonPropertyName("id")]
+        public long? Id { get; set; }
 
-		[JsonPropertyName("urls")] public List<Url> Urls { get; set; } = new();
-	}
+        [JsonPropertyName("nickname")]
+        public string Nickname { get; set; }
 
-	public sealed class FluffyAuthTypes
-	{
-		[JsonPropertyName("storyboard")] public string Storyboard { get; set; }
-	}
+        [JsonPropertyName("iconUrl")]
+        public Uri IconUrl { get; set; }
 
-	public sealed class TemperaturesOwner
-	{
-		[JsonPropertyName("id")] public long? Id { get; set; }
+        [JsonPropertyName("channel")]
+        public object Channel { get; set; }
 
-		[JsonPropertyName("nickname")] public string Nickname { get; set; }
+        [JsonPropertyName("live")]
+        public object Live { get; set; }
 
-		[JsonPropertyName("iconUrl")] public Uri IconUrl { get; set; }
+        [JsonPropertyName("isVideosPublic")]
+        public bool? IsVideosPublic { get; set; }
 
-		[JsonPropertyName("channel")] public object Channel { get; set; }
+        [JsonPropertyName("isMylistsPublic")]
+        public bool? IsMylistsPublic { get; set; }
 
-		[JsonPropertyName("live")] public object Live { get; set; }
+        [JsonPropertyName("videoLiveNotice")]
+        public object VideoLiveNotice { get; set; }
 
-		[JsonPropertyName("isVideosPublic")] public bool? IsVideosPublic { get; set; }
+        [JsonPropertyName("viewer")]
+        public OwnerViewer Viewer { get; set; }
+    }
 
-		[JsonPropertyName("isMylistsPublic")] public bool? IsMylistsPublic { get; set; }
+    public sealed class OwnerViewer
+    {
+        [JsonPropertyName("isFollowing")]
+        public bool? IsFollowing { get; set; }
+    }
 
-		[JsonPropertyName("videoLiveNotice")] public object VideoLiveNotice { get; set; }
+    public sealed class PaymentClass
+    {
+        [JsonPropertyName("video")]
+        public PaymentVideo Video { get; set; }
 
-		[JsonPropertyName("viewer")] public OwnerViewer Viewer { get; set; }
-	}
+        [JsonPropertyName("preview")]
+        public Preview Preview { get; set; }
+    }
 
-	public sealed class OwnerViewer
-	{
-		[JsonPropertyName("isFollowing")] public bool? IsFollowing { get; set; }
-	}
+    public sealed class Preview
+    {
+        [JsonPropertyName("ppv")]
+        public Ichiba Ppv { get; set; }
 
-	public sealed class PaymentClass
-	{
-		[JsonPropertyName("video")] public PaymentVideo Video { get; set; }
+        [JsonPropertyName("admission")]
+        public Ichiba Admission { get; set; }
 
-		[JsonPropertyName("preview")] public Preview Preview { get; set; }
-	}
+        [JsonPropertyName("premium")]
+        public Ichiba Premium { get; set; }
+    }
 
-	public sealed class Preview
-	{
-		[JsonPropertyName("ppv")] public Ichiba Ppv { get; set; }
+    public sealed class PaymentVideo
+    {
+        [JsonPropertyName("isPpv")]
+        public bool? IsPpv { get; set; }
 
-		[JsonPropertyName("admission")] public Ichiba Admission { get; set; }
+        [JsonPropertyName("isAdmission")]
+        public bool? IsAdmission { get; set; }
 
-		[JsonPropertyName("premium")] public Ichiba Premium { get; set; }
-	}
+        [JsonPropertyName("isPremium")]
+        public bool? IsPremium { get; set; }
 
-	public sealed class PaymentVideo
-	{
-		[JsonPropertyName("isPpv")] public bool? IsPpv { get; set; }
+        [JsonPropertyName("watchableUserType")]
+        public string WatchableUserType { get; set; }
 
-		[JsonPropertyName("isAdmission")] public bool? IsAdmission { get; set; }
+        [JsonPropertyName("commentableUserType")]
+        public string CommentableUserType { get; set; }
+    }
 
-		[JsonPropertyName("isPremium")] public bool? IsPremium { get; set; }
+    public sealed class PcWatchPageClass
+    {
+        [JsonPropertyName("tagRelatedBanner")]
+        public object TagRelatedBanner { get; set; }
 
-		[JsonPropertyName("watchableUserType")] public string WatchableUserType { get; set; }
+        [JsonPropertyName("videoEnd")]
+        public VideoEnd VideoEnd { get; set; }
 
-		[JsonPropertyName("commentableUserType")] public string CommentableUserType { get; set; }
-	}
+        [JsonPropertyName("showOwnerMenu")]
+        public bool? ShowOwnerMenu { get; set; }
 
-	public sealed class PcWatchPageClass
-	{
-		[JsonPropertyName("tagRelatedBanner")] public object TagRelatedBanner { get; set; }
+        [JsonPropertyName("showOwnerThreadCoEditingLink")]
+        public bool? ShowOwnerThreadCoEditingLink { get; set; }
 
-		[JsonPropertyName("videoEnd")] public VideoEnd VideoEnd { get; set; }
+        [JsonPropertyName("showMymemoryEditingLink")]
+        public bool? ShowMymemoryEditingLink { get; set; }
+    }
 
-		[JsonPropertyName("showOwnerMenu")] public bool? ShowOwnerMenu { get; set; }
+    public sealed class VideoEnd
+    {
+        [JsonPropertyName("bannerIn")]
+        public object BannerIn { get; set; }
 
-		[JsonPropertyName("showOwnerThreadCoEditingLink")] public bool? ShowOwnerThreadCoEditingLink { get; set; }
+        [JsonPropertyName("overlay")]
+        public object Overlay { get; set; }
+    }
 
-		[JsonPropertyName("showMymemoryEditingLink")] public bool? ShowMymemoryEditingLink { get; set; }
-	}
+    public sealed class PlayerClass
+    {
+        [JsonPropertyName("initialPlayback")]
+        public InitialPlayback InitialPlayback { get; set; }
 
-	public sealed class VideoEnd
-	{
-		[JsonPropertyName("bannerIn")] public object BannerIn { get; set; }
+        [JsonPropertyName("comment")]
+        public PlayerComment Comment { get; set; }
 
-		[JsonPropertyName("overlay")] public object Overlay { get; set; }
-	}
+        [JsonPropertyName("layerMode")]
+        public long? LayerMode { get; set; }
+    }
 
-	public sealed class PlayerClass
-	{
-		[JsonPropertyName("initialPlayback")] public InitialPlayback InitialPlayback { get; set; }
+    public sealed class PlayerComment
+    {
+        [JsonPropertyName("isDefaultInvisible")]
+        public bool? IsDefaultInvisible { get; set; }
+    }
 
-		[JsonPropertyName("comment")] public PlayerComment Comment { get; set; }
+    public sealed class InitialPlayback
+    {
+        [JsonPropertyName("type")]
+        public string Type { get; set; }
 
-		[JsonPropertyName("layerMode")] public long? LayerMode { get; set; }
-	}
+        [JsonPropertyName("positionSec")]
+        public double? PositionSec { get; set; }
+    }
 
-	public sealed class PlayerComment
-	{
-		[JsonPropertyName("isDefaultInvisible")] public bool? IsDefaultInvisible { get; set; }
-	}
+    public sealed class RankingClass
+    {
+        [JsonPropertyName("genre")]
+        public RankingGenre Genre { get; set; }
 
-	public sealed class InitialPlayback
-	{
-		[JsonPropertyName("type")] public string Type { get; set; }
+        [JsonPropertyName("popularTag")]
+        public List<PopularTag> PopularTag { get; set; } = new();
+    }
 
-		[JsonPropertyName("positionSec")] public double? PositionSec { get; set; }
-	}
+    public sealed class RankingGenre
+    {
+        [JsonPropertyName("rank")]
+        public long? Rank { get; set; }
 
-	public sealed class RankingClass
-	{
-		[JsonPropertyName("genre")] public RankingGenre Genre { get; set; }
+        [JsonPropertyName("genre")]
+        public string Genre { get; set; }
 
-		[JsonPropertyName("popularTag")] public List<PopularTag> PopularTag { get; set; } = new();
-	}
+        [JsonPropertyName("dateTime")]
+        public DateTimeOffset? DateTime { get; set; }
+    }
 
-	public sealed class RankingGenre
-	{
-		[JsonPropertyName("rank")] public long? Rank { get; set; }
+    public sealed class PopularTag
+    {
+        [JsonPropertyName("tag")]
+        public string Tag { get; set; }
 
-		[JsonPropertyName("genre")] public string Genre { get; set; }
+        [JsonPropertyName("regularizedTag")]
+        public string RegularizedTag { get; set; }
 
-		[JsonPropertyName("dateTime")] public DateTimeOffset? DateTime { get; set; }
-	}
+        [JsonPropertyName("rank")]
+        public long? Rank { get; set; }
 
-	public sealed class PopularTag
-	{
-		[JsonPropertyName("tag")] public string Tag { get; set; }
+        [JsonPropertyName("genre")]
+        public string Genre { get; set; }
 
-		[JsonPropertyName("regularizedTag")] public string RegularizedTag { get; set; }
+        [JsonPropertyName("dateTime")]
+        public DateTimeOffset? DateTime { get; set; }
+    }
 
-		[JsonPropertyName("rank")] public long? Rank { get; set; }
+    public sealed class SeriesClass
+    {
+        [JsonPropertyName("id")]
+        public long? Id { get; set; }
 
-		[JsonPropertyName("genre")] public string Genre { get; set; }
+        [JsonPropertyName("title")]
+        public string Title { get; set; }
 
-		[JsonPropertyName("dateTime")] public DateTimeOffset? DateTime { get; set; }
-	}
+        [JsonPropertyName("description")]
+        public string Description { get; set; }
 
-	public sealed class SeriesClass
-	{
-		[JsonPropertyName("id")] public long? Id { get; set; }
+        [JsonPropertyName("thumbnailUrl")]
+        public Uri ThumbnailUrl { get; set; }
 
-		[JsonPropertyName("title")] public string Title { get; set; }
+        [JsonPropertyName("video")]
+        public SeriesVideo Video { get; set; }
+    }
 
-		[JsonPropertyName("description")] public string Description { get; set; }
+    public sealed class SeriesVideo
+    {
+        [JsonPropertyName("prev")]
+        public First Prev { get; set; }
 
-		[JsonPropertyName("thumbnailUrl")] public Uri ThumbnailUrl { get; set; }
+        [JsonPropertyName("next")]
+        public First Next { get; set; }
 
-		[JsonPropertyName("video")] public SeriesVideo Video { get; set; }
-	}
+        [JsonPropertyName("first")]
+        public First First { get; set; }
+    }
 
-	public sealed class SeriesVideo
-	{
-		[JsonPropertyName("prev")] public First Prev { get; set; }
+    public sealed class First
+    {
+        [JsonPropertyName("type")]
+        public string Type { get; set; }
 
-		[JsonPropertyName("next")] public First Next { get; set; }
+        [JsonPropertyName("id")]
+        public string Id { get; set; }
 
-		[JsonPropertyName("first")] public First First { get; set; }
-	}
+        [JsonPropertyName("title")]
+        public string Title { get; set; }
 
-	public sealed class First
-	{
-		[JsonPropertyName("type")] public string Type { get; set; }
+        [JsonPropertyName("registeredAt")]
+        public DateTimeOffset? RegisteredAt { get; set; }
 
-		[JsonPropertyName("id")] public string Id { get; set; }
+        [JsonPropertyName("count")]
+        public Count Count { get; set; }
 
-		[JsonPropertyName("title")] public string Title { get; set; }
+        [JsonPropertyName("thumbnail")]
+        public FirstThumbnail Thumbnail { get; set; }
 
-		[JsonPropertyName("registeredAt")] public DateTimeOffset? RegisteredAt { get; set; }
+        [JsonPropertyName("duration")]
+        public long? Duration { get; set; }
 
-		[JsonPropertyName("count")] public Count Count { get; set; }
+        [JsonPropertyName("shortDescription")]
+        public string ShortDescription { get; set; }
 
-		[JsonPropertyName("thumbnail")] public FirstThumbnail Thumbnail { get; set; }
+        [JsonPropertyName("latestCommentSummary")]
+        public string LatestCommentSummary { get; set; }
 
-		[JsonPropertyName("duration")] public long? Duration { get; set; }
+        [JsonPropertyName("isChannelVideo")]
+        public bool? IsChannelVideo { get; set; }
 
-		[JsonPropertyName("shortDescription")] public string ShortDescription { get; set; }
+        [JsonPropertyName("isPaymentRequired")]
+        public bool? IsPaymentRequired { get; set; }
 
-		[JsonPropertyName("latestCommentSummary")] public string LatestCommentSummary { get; set; }
+        [JsonPropertyName("playbackPosition")]
+        public object PlaybackPosition { get; set; }
 
-		[JsonPropertyName("isChannelVideo")] public bool? IsChannelVideo { get; set; }
+        [JsonPropertyName("owner")]
+        public FirstOwner Owner { get; set; }
 
-		[JsonPropertyName("isPaymentRequired")] public bool? IsPaymentRequired { get; set; }
+        [JsonPropertyName("requireSensitiveMasking")]
+        public bool? RequireSensitiveMasking { get; set; }
 
-		[JsonPropertyName("playbackPosition")] public object PlaybackPosition { get; set; }
+        [JsonPropertyName("videoLive")]
+        public object VideoLive { get; set; }
 
-		[JsonPropertyName("owner")] public FirstOwner Owner { get; set; }
+        [JsonPropertyName("9d091f87")]
+        public bool? The9D091F87 { get; set; }
 
-		[JsonPropertyName("requireSensitiveMasking")] public bool? RequireSensitiveMasking { get; set; }
+        [JsonPropertyName("acf68865")]
+        public bool? Acf68865 { get; set; }
+    }
 
-		[JsonPropertyName("videoLive")] public object VideoLive { get; set; }
+    public sealed class Count
+    {
+        [JsonPropertyName("view")]
+        public long? View { get; set; }
 
-		[JsonPropertyName("9d091f87")] public bool? The9D091F87 { get; set; }
+        [JsonPropertyName("comment")]
+        public long? Comment { get; set; }
 
-		[JsonPropertyName("acf68865")] public bool? Acf68865 { get; set; }
-	}
+        [JsonPropertyName("mylist")]
+        public long? Mylist { get; set; }
 
-	public sealed class Count
-	{
-		[JsonPropertyName("view")] public long? View { get; set; }
+        [JsonPropertyName("like")]
+        public long? Like { get; set; }
+    }
 
-		[JsonPropertyName("comment")] public long? Comment { get; set; }
+    public sealed class FirstOwner
+    {
+        [JsonPropertyName("ownerType")]
+        public string OwnerType { get; set; }
 
-		[JsonPropertyName("mylist")] public long? Mylist { get; set; }
+        [JsonPropertyName("id")]
+        public string Id { get; set; }
 
-		[JsonPropertyName("like")] public long? Like { get; set; }
-	}
+        [JsonPropertyName("name")]
+        public string Name { get; set; }
 
-	public sealed class FirstOwner
-	{
-		[JsonPropertyName("ownerType")] public string OwnerType { get; set; }
+        [JsonPropertyName("iconUrl")]
+        public Uri IconUrl { get; set; }
+    }
 
-		[JsonPropertyName("id")] public string Id { get; set; }
+    public sealed class FirstThumbnail
+    {
+        [JsonPropertyName("url")]
+        public Uri Url { get; set; }
 
-		[JsonPropertyName("name")] public string Name { get; set; }
+        [JsonPropertyName("middleUrl")]
+        public Uri MiddleUrl { get; set; }
 
-		[JsonPropertyName("iconUrl")] public Uri IconUrl { get; set; }
-	}
+        [JsonPropertyName("largeUrl")]
+        public Uri LargeUrl { get; set; }
 
-	public sealed class FirstThumbnail
-	{
-		[JsonPropertyName("url")] public Uri Url { get; set; }
+        [JsonPropertyName("listingUrl")]
+        public Uri ListingUrl { get; set; }
 
-		[JsonPropertyName("middleUrl")] public Uri MiddleUrl { get; set; }
+        [JsonPropertyName("nHdUrl")]
+        public Uri NHdUrl { get; set; }
+    }
 
-		[JsonPropertyName("largeUrl")] public Uri LargeUrl { get; set; }
+    public sealed class SystemClass
+    {
+        [JsonPropertyName("serverTime")]
+        public DateTimeOffset? ServerTime { get; set; }
 
-		[JsonPropertyName("listingUrl")] public Uri ListingUrl { get; set; }
+        [JsonPropertyName("isPeakTime")]
+        public bool? IsPeakTime { get; set; }
+    }
 
-		[JsonPropertyName("nHdUrl")] public Uri NHdUrl { get; set; }
-	}
+    public sealed class TagClass
+    {
+        [JsonPropertyName("items")]
+        public List<Item> Items { get; set; } = new();
 
-	public sealed class SystemClass
-	{
-		[JsonPropertyName("serverTime")] public DateTimeOffset? ServerTime { get; set; }
+        [JsonPropertyName("hasR18Tag")]
+        public bool? HasR18Tag { get; set; }
 
-		[JsonPropertyName("isPeakTime")] public bool? IsPeakTime { get; set; }
-	}
+        [JsonPropertyName("isPublishedNicoscript")]
+        public bool? IsPublishedNicoscript { get; set; }
 
-	public sealed class TagClass
-	{
-		[JsonPropertyName("items")] public List<Item> Items { get; set; } = new();
+        [JsonPropertyName("edit")]
+        public Edit Edit { get; set; }
 
-		[JsonPropertyName("hasR18Tag")] public bool? HasR18Tag { get; set; }
+        [JsonPropertyName("viewer")]
+        public Edit Viewer { get; set; }
+    }
 
-		[JsonPropertyName("isPublishedNicoscript")] public bool? IsPublishedNicoscript { get; set; }
+    public sealed class Edit
+    {
+        [JsonPropertyName("isEditable")]
+        public bool? IsEditable { get; set; }
 
-		[JsonPropertyName("edit")] public Edit Edit { get; set; }
+        [JsonPropertyName("uneditableReason")]
+        public object UneditableReason { get; set; }
 
-		[JsonPropertyName("viewer")] public Edit Viewer { get; set; }
-	}
+        [JsonPropertyName("editKey")]
+        public string EditKey { get; set; }
+    }
 
-	public sealed class Edit
-	{
-		[JsonPropertyName("isEditable")] public bool? IsEditable { get; set; }
+    public sealed class Item
+    {
+        [JsonPropertyName("name")]
+        public string Name { get; set; }
 
-		[JsonPropertyName("uneditableReason")] public object UneditableReason { get; set; }
+        [JsonPropertyName("isCategory")]
+        public bool? IsCategory { get; set; }
 
-		[JsonPropertyName("editKey")] public string EditKey { get; set; }
-	}
+        [JsonPropertyName("isCategoryCandidate")]
+        public bool? IsCategoryCandidate { get; set; }
 
-	public sealed class Item
-	{
-		[JsonPropertyName("name")] public string Name { get; set; }
+        [JsonPropertyName("isNicodicArticleExists")]
+        public bool? IsNicodicArticleExists { get; set; }
 
-		[JsonPropertyName("isCategory")] public bool? IsCategory { get; set; }
+        [JsonPropertyName("isLocked")]
+        public bool? IsLocked { get; set; }
+    }
 
-		[JsonPropertyName("isCategoryCandidate")] public bool? IsCategoryCandidate { get; set; }
+    public sealed class TemperaturesVideo
+    {
+        [JsonPropertyName("id")]
+        public string Id { get; set; }
 
-		[JsonPropertyName("isNicodicArticleExists")] public bool? IsNicodicArticleExists { get; set; }
+        [JsonPropertyName("title")]
+        public string Title { get; set; }
 
-		[JsonPropertyName("isLocked")] public bool? IsLocked { get; set; }
-	}
+        [JsonPropertyName("description")]
+        public string Description { get; set; }
 
-	public sealed class TemperaturesVideo
-	{
-		[JsonPropertyName("id")] public string Id { get; set; }
+        [JsonPropertyName("count")]
+        public Count Count { get; set; }
 
-		[JsonPropertyName("title")] public string Title { get; set; }
+        [JsonPropertyName("duration")]
+        public long? Duration { get; set; }
 
-		[JsonPropertyName("description")] public string Description { get; set; }
+        [JsonPropertyName("thumbnail")]
+        public VideoThumbnail Thumbnail { get; set; }
 
-		[JsonPropertyName("count")] public Count Count { get; set; }
+        [JsonPropertyName("rating")]
+        public Rating Rating { get; set; }
 
-		[JsonPropertyName("duration")] public long? Duration { get; set; }
+        [JsonPropertyName("registeredAt")]
+        public DateTimeOffset? RegisteredAt { get; set; }
 
-		[JsonPropertyName("thumbnail")] public VideoThumbnail Thumbnail { get; set; }
+        [JsonPropertyName("isPrivate")]
+        public bool? IsPrivate { get; set; }
 
-		[JsonPropertyName("rating")] public Rating Rating { get; set; }
+        [JsonPropertyName("isDeleted")]
+        public bool? IsDeleted { get; set; }
 
-		[JsonPropertyName("registeredAt")] public DateTimeOffset? RegisteredAt { get; set; }
+        [JsonPropertyName("isNoBanner")]
+        public bool? IsNoBanner { get; set; }
 
-		[JsonPropertyName("isPrivate")] public bool? IsPrivate { get; set; }
+        [JsonPropertyName("isAuthenticationRequired")]
+        public bool? IsAuthenticationRequired { get; set; }
 
-		[JsonPropertyName("isDeleted")] public bool? IsDeleted { get; set; }
+        [JsonPropertyName("isEmbedPlayerAllowed")]
+        public bool? IsEmbedPlayerAllowed { get; set; }
 
-		[JsonPropertyName("isNoBanner")] public bool? IsNoBanner { get; set; }
+        [JsonPropertyName("viewer")]
+        public VideoViewer Viewer { get; set; }
 
-		[JsonPropertyName("isAuthenticationRequired")] public bool? IsAuthenticationRequired { get; set; }
+        [JsonPropertyName("watchableUserTypeForPayment")]
+        public string WatchableUserTypeForPayment { get; set; }
 
-		[JsonPropertyName("isEmbedPlayerAllowed")] public bool? IsEmbedPlayerAllowed { get; set; }
+        [JsonPropertyName("commentableUserTypeForPayment")]
+        public string CommentableUserTypeForPayment { get; set; }
 
-		[JsonPropertyName("viewer")] public VideoViewer Viewer { get; set; }
+        [JsonPropertyName("9d091f87")]
+        public bool? The9D091F87 { get; set; }
+    }
 
-		[JsonPropertyName("watchableUserTypeForPayment")] public string WatchableUserTypeForPayment { get; set; }
+    public sealed class Rating
+    {
+        [JsonPropertyName("isAdult")]
+        public bool? IsAdult { get; set; }
+    }
 
-		[JsonPropertyName("commentableUserTypeForPayment")]
-		public string CommentableUserTypeForPayment { get; set; }
+    public sealed class VideoThumbnail
+    {
+        [JsonPropertyName("url")]
+        public Uri Url { get; set; }
 
-		[JsonPropertyName("9d091f87")] public bool? The9D091F87 { get; set; }
-	}
+        [JsonPropertyName("middleUrl")]
+        public Uri MiddleUrl { get; set; }
 
-	public sealed class Rating
-	{
-		[JsonPropertyName("isAdult")] public bool? IsAdult { get; set; }
-	}
+        [JsonPropertyName("largeUrl")]
+        public Uri LargeUrl { get; set; }
 
-	public sealed class VideoThumbnail
-	{
-		[JsonPropertyName("url")] public Uri Url { get; set; }
+        [JsonPropertyName("player")]
+        public Uri Player { get; set; }
 
-		[JsonPropertyName("middleUrl")] public Uri MiddleUrl { get; set; }
+        [JsonPropertyName("ogp")]
+        public Uri Ogp { get; set; }
+    }
 
-		[JsonPropertyName("largeUrl")] public Uri LargeUrl { get; set; }
+    public sealed class VideoViewer
+    {
+        [JsonPropertyName("isOwner")]
+        public bool? IsOwner { get; set; }
 
-		[JsonPropertyName("player")] public Uri Player { get; set; }
+        [JsonPropertyName("like")]
+        public Like Like { get; set; }
+    }
 
-		[JsonPropertyName("ogp")] public Uri Ogp { get; set; }
-	}
+    public sealed class Like
+    {
+        [JsonPropertyName("isLiked")]
+        public bool? IsLiked { get; set; }
 
-	public sealed class VideoViewer
-	{
-		[JsonPropertyName("isOwner")] public bool? IsOwner { get; set; }
+        [JsonPropertyName("count")]
+        public object Count { get; set; }
+    }
 
-		[JsonPropertyName("like")] public Like Like { get; set; }
-	}
+    public sealed class VideoAdsClass
+    {
+        [JsonPropertyName("additionalParams")]
+        public AdditionalParams AdditionalParams { get; set; }
 
-	public sealed class Like
-	{
-		[JsonPropertyName("isLiked")] public bool? IsLiked { get; set; }
+        [JsonPropertyName("items")]
+        public List<object> Items { get; set; } = new();
 
-		[JsonPropertyName("count")] public object Count { get; set; }
-	}
+        [JsonPropertyName("reason")]
+        public object Reason { get; set; }
+    }
 
-	public sealed class VideoAdsClass
-	{
-		[JsonPropertyName("additionalParams")] public AdditionalParams AdditionalParams { get; set; }
+    public sealed class AdditionalParams
+    {
+        [JsonPropertyName("videoId")]
+        public string VideoId { get; set; }
 
-		[JsonPropertyName("items")] public List<object> Items { get; set; } = new();
+        [JsonPropertyName("videoDuration")]
+        public long? VideoDuration { get; set; }
 
-		[JsonPropertyName("reason")] public object Reason { get; set; }
-	}
+        [JsonPropertyName("isAdultRatingNG")]
+        public bool? IsAdultRatingNg { get; set; }
 
-	public sealed class AdditionalParams
-	{
-		[JsonPropertyName("videoId")] public string VideoId { get; set; }
+        [JsonPropertyName("isAuthenticationRequired")]
+        public bool? IsAuthenticationRequired { get; set; }
 
-		[JsonPropertyName("videoDuration")] public long? VideoDuration { get; set; }
+        [JsonPropertyName("isR18")]
+        public bool? IsR18 { get; set; }
 
-		[JsonPropertyName("isAdultRatingNG")] public bool? IsAdultRatingNg { get; set; }
+        [JsonPropertyName("nicosid")]
+        public string Nicosid { get; set; }
 
-		[JsonPropertyName("isAuthenticationRequired")] public bool? IsAuthenticationRequired { get; set; }
+        [JsonPropertyName("lang")]
+        public string Lang { get; set; }
 
-		[JsonPropertyName("isR18")] public bool? IsR18 { get; set; }
+        [JsonPropertyName("watchTrackId")]
+        public string WatchTrackId { get; set; }
 
-		[JsonPropertyName("nicosid")] public string Nicosid { get; set; }
+        [JsonPropertyName("genre")]
+        public string Genre { get; set; }
 
-		[JsonPropertyName("lang")] public string Lang { get; set; }
+        [JsonPropertyName("gender")]
+        public string Gender { get; set; }
 
-		[JsonPropertyName("watchTrackId")] public string WatchTrackId { get; set; }
+        [JsonPropertyName("age")]
+        public long? Age { get; set; }
+    }
 
-		[JsonPropertyName("genre")] public string Genre { get; set; }
+    public sealed class TemperaturesViewer
+    {
+        [JsonPropertyName("id")]
+        public long? Id { get; set; }
 
-		[JsonPropertyName("gender")] public string Gender { get; set; }
+        [JsonPropertyName("nickname")]
+        public string Nickname { get; set; }
 
-		[JsonPropertyName("age")] public long? Age { get; set; }
-	}
+        [JsonPropertyName("isPremium")]
+        public bool? IsPremium { get; set; }
 
-	public sealed class TemperaturesViewer
-	{
-		[JsonPropertyName("id")] public long? Id { get; set; }
+        [JsonPropertyName("existence")]
+        public Existence Existence { get; set; }
+    }
 
-		[JsonPropertyName("nickname")] public string Nickname { get; set; }
+    public sealed class Existence
+    {
+        [JsonPropertyName("age")]
+        public long? Age { get; set; }
 
-		[JsonPropertyName("isPremium")] public bool? IsPremium { get; set; }
+        [JsonPropertyName("prefecture")]
+        public string Prefecture { get; set; }
 
-		[JsonPropertyName("existence")] public Existence Existence { get; set; }
-	}
+        [JsonPropertyName("sex")]
+        public string Sex { get; set; }
+    }
 
-	public sealed class Existence
-	{
-		[JsonPropertyName("age")] public long? Age { get; set; }
+    public sealed class WakuClass
+    {
+        [JsonPropertyName("information")]
+        public object Information { get; set; }
 
-		[JsonPropertyName("prefecture")] public string Prefecture { get; set; }
+        [JsonPropertyName("bgImages")]
+        public List<object> BgImages { get; set; } = new();
 
-		[JsonPropertyName("sex")] public string Sex { get; set; }
-	}
+        [JsonPropertyName("addContents")]
+        public object AddContents { get; set; }
 
-	public sealed class WakuClass
-	{
-		[JsonPropertyName("information")] public object Information { get; set; }
+        [JsonPropertyName("addVideo")]
+        public object AddVideo { get; set; }
 
-		[JsonPropertyName("bgImages")] public List<object> BgImages { get; set; } = new();
+        [JsonPropertyName("tagRelatedBanner")]
+        public object TagRelatedBanner { get; set; }
 
-		[JsonPropertyName("addContents")] public object AddContents { get; set; }
-
-		[JsonPropertyName("addVideo")] public object AddVideo { get; set; }
-
-		[JsonPropertyName("tagRelatedBanner")] public object TagRelatedBanner { get; set; }
-
-		[JsonPropertyName("tagRelatedMarquee")] public object TagRelatedMarquee { get; set; }
-	}
+        [JsonPropertyName("tagRelatedMarquee")]
+        public object TagRelatedMarquee { get; set; }
+    }
 }
