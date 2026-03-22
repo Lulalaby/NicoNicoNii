@@ -37,6 +37,11 @@ public class NndClient
 
     internal DateTimeOffset? LoginDate { get; set; }
 
+    /// <summary>
+    ///     Gets the configured HTTP client used for Nico requests.
+    /// </summary>
+    public HttpClient HttpClient => this.Client;
+
     public LoginSessionData LoginSessionData { get; internal set; }
 
     public async Task<LoginSessionData> LoginAsync(string emailTel, string password)
