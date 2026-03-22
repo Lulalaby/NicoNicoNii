@@ -4,12 +4,14 @@ using NicoNicoNii.Entities.JSON.Video;
 
 using System.Text;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 using System.Web;
 
 namespace NicoNicoNii;
 
 public class NicoVideoClient
 {
+    private static readonly Regex ServerResponseRegex = new("<meta\\s+name=\"server-response\"\\s+content=\"([^\"]+)\"", RegexOptions.IgnoreCase | RegexOptions.Compiled);
     private readonly NndClient nndClient;
 
     public NicoVideoClient(NndClient nndClient)
@@ -32,10 +34,30 @@ public class NicoVideoClient
         var page = await pageResponse.Content.ReadAsStringAsync();
         var context = BrowsingContext.New(Configuration.Default);
         var doc = await context.OpenAsync(req => req.Content(page));
-        var elm = doc.GetElementById("js-initial-watch-data").GetAttribute("data-api-data");
-        var json = HttpUtility.HtmlDecode(elm);
-        var data = JsonSerializer.Deserialize<WatchPageData>(json);
-        return data;
+        var legacyElement = doc.GetElementById("js-initial-watch-data");
+        if (legacyElement is not null)
+        {
+            var legacyJson = legacyElement.GetAttribute("data-api-data");
+            if (!string.IsNullOrWhiteSpace(legacyJson))
+            {
+                var decodedLegacyJson = HttpUtility.HtmlDecode(legacyJson);
+                var legacyData = JsonSerializer.Deserialize<WatchPageData>(decodedLegacyJson);
+                if (legacyData is not null)
+                    return legacyData;
+            }
+        }
+
+        var serverResponseMatch = ServerResponseRegex.Match(page);
+        if (!serverResponseMatch.Success)
+            return default;
+
+        var decodedServerResponse = HttpUtility.HtmlDecode(serverResponseMatch.Groups[1].Value);
+        using var serverResponseDocument = JsonDocument.Parse(decodedServerResponse);
+        if (!serverResponseDocument.RootElement.TryGetProperty("data", out var dataElement)
+            || !dataElement.TryGetProperty("response", out var responseElement))
+            return default;
+
+        return responseElement.Deserialize<WatchPageData>();
     }
 
     /// <summary>

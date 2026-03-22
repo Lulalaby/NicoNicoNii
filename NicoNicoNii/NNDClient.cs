@@ -25,12 +25,14 @@ public class NndClient
         };
         this.Handler = handler;
         this.Client = new(handler);
+        ApplyDefaultHeaders(this.Client);
     }
 
     public NndClient(HttpClientHandler handler)
     {
         this.Handler = handler;
         this.Client = new(handler);
+        ApplyDefaultHeaders(this.Client);
     }
 
     internal DateTimeOffset? LoginDate { get; set; }
@@ -66,5 +68,16 @@ public class NndClient
         var responseMessage = await this.Client.GetAsync("https://account.nicovideo.jp/logout", HttpCompletionOption.ResponseHeadersRead);
         this.LoginDate = null;
         return responseMessage.IsSuccessStatusCode;
+    }
+
+    private static void ApplyDefaultHeaders(HttpClient client)
+    {
+        client.DefaultRequestHeaders.UserAgent.ParseAdd("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36");
+        client.DefaultRequestHeaders.Accept.ParseAdd("text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8");
+        client.DefaultRequestHeaders.AcceptLanguage.ParseAdd("ja,en-US;q=0.9,en;q=0.8");
+        client.DefaultRequestHeaders.Add("sec-ch-ua", "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"Google Chrome\";v=\"134\"");
+        client.DefaultRequestHeaders.Add("sec-ch-ua-mobile", "?0");
+        client.DefaultRequestHeaders.Add("sec-ch-ua-platform", "\"Windows\"");
+        client.DefaultRequestHeaders.Add("upgrade-insecure-requests", "1");
     }
 }
