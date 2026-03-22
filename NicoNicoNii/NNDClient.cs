@@ -1,10 +1,10 @@
-﻿using System.Net;
+﻿using NicoNicoNii.Entities.JSON;
+using NicoNicoNii.Entities.XML;
+
+using System.Net;
 using System.Text;
 using System.Text.Json;
 using System.Xml.Serialization;
-
-using NicoNicoNii.Entities.JSON;
-using NicoNicoNii.Entities.XML;
 
 namespace NicoNicoNii;
 

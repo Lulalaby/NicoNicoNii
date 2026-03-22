@@ -1,10 +1,10 @@
-﻿using System.Text;
-using System.Text.Json;
-using System.Web;
-
-using AngleSharp;
+﻿using AngleSharp;
 
 using NicoNicoNii.Entities.JSON.Video;
+
+using System.Text;
+using System.Text.Json;
+using System.Web;
 
 namespace NicoNicoNii;
 
@@ -17,12 +17,12 @@ public class NicoVideoClient
         this.nndClient = nndClient;
     }
 
-	/// <summary>
-	///     Get the WatchPage JSON from a NicoNico Video page (js-initial-watch-data)
-	/// </summary>
-	/// <param name="videoId">ID of the video smXXXXXXX</param>
-	/// <returns>WatchPage object</returns>
-	public async Task<WatchPageData> GetWatchPageInfoAsync(string videoId)
+    /// <summary>
+    ///     Get the WatchPage JSON from a NicoNico Video page (js-initial-watch-data)
+    /// </summary>
+    /// <param name="videoId">ID of the video smXXXXXXX</param>
+    /// <returns>WatchPage object</returns>
+    public async Task<WatchPageData> GetWatchPageInfoAsync(string videoId)
     {
         var pageResponse = await this.nndClient.Client.GetAsync($"https://www.nicovideo.jp/watch/{videoId}", HttpCompletionOption.ResponseHeadersRead);
 
@@ -38,12 +38,12 @@ public class NicoVideoClient
         return data;
     }
 
-	/// <summary>
-	///     Initialize a NonMember session, NND might cache this so its only needed once, but not sure
-	/// </summary>
-	/// <param name="watchPageData">WatchPage object needed for anonymous user info</param>
-	/// <returns>Returns nothing, the POST has an empty repsonse</returns>
-	public async Task InitializeNonMemberSessionAsync(WatchPageData watchPageData)
+    /// <summary>
+    ///     Initialize a NonMember session, NND might cache this so its only needed once, but not sure
+    /// </summary>
+    /// <param name="watchPageData">WatchPage object needed for anonymous user info</param>
+    /// <returns>Returns nothing, the POST has an empty repsonse</returns>
+    public async Task InitializeNonMemberSessionAsync(WatchPageData watchPageData)
     {
         var noMemberJson = JsonSerializer.Serialize(new[]
         {
@@ -58,17 +58,17 @@ public class NicoVideoClient
         var response = await this.nndClient.Client.SendAsync(msg);
     }
 
-	/// <summary>
-	///     Get a reponse object from the Video API for the HTTP (usually mp4) version of a video
-	/// </summary>
-	/// <param name="watchPageData">WatchPage object</param>
-	/// <param name="audioQualities">
-	///     Preferred audio streams (there are like 1-2 depending on video), if multiple or null NND
-	///     will decide
-	/// </param>
-	/// <param name="videoQualities">Preferred video streams, if multiple or null NND will decide</param>
-	/// <returns>SessionCreate Response with video API info about the content</returns>
-	public async Task<SessionCreateResponse> GetHttpVideoApiResponseAsync(WatchPageData watchPageData, string[] audioQualities = null, string[] videoQualities = null)
+    /// <summary>
+    ///     Get a reponse object from the Video API for the HTTP (usually mp4) version of a video
+    /// </summary>
+    /// <param name="watchPageData">WatchPage object</param>
+    /// <param name="audioQualities">
+    ///     Preferred audio streams (there are like 1-2 depending on video), if multiple or null NND
+    ///     will decide
+    /// </param>
+    /// <param name="videoQualities">Preferred video streams, if multiple or null NND will decide</param>
+    /// <returns>SessionCreate Response with video API info about the content</returns>
+    public async Task<SessionCreateResponse> GetHttpVideoApiResponseAsync(WatchPageData watchPageData, string[] audioQualities = null, string[] videoQualities = null)
     {
         videoQualities ??= watchPageData.Media.Delivery.Movie.Session.Videos.ToArray();
         audioQualities ??= watchPageData.Media.Delivery.Movie.Session.Audios.ToArray();
@@ -85,18 +85,18 @@ public class NicoVideoClient
         return sessionResponse;
     }
 
-	/// <summary>
-	///     Get a reponse object from the Video API for the HLS (so DASH but video and audio arent seperated I think) version
-	///     of a video
-	/// </summary>
-	/// <param name="watchPageData">WatchPage object</param>
-	/// <param name="audioQualities">
-	///     Preferred audio streams (there are like 1-2 depending on video), if multiple or null NND
-	///     will decide
-	/// </param>
-	/// <param name="videoQualities">Preferred video streams, if multiple or null NND will decide</param>
-	/// <returns>SessionCreate Response with video API info about the content</returns>
-	public async Task<SessionCreateResponse> GetHlsVideoApiResponseAsync(WatchPageData watchPageData, string[] audioQualities = null, string[] videoQualities = null)
+    /// <summary>
+    ///     Get a reponse object from the Video API for the HLS (so DASH but video and audio arent seperated I think) version
+    ///     of a video
+    /// </summary>
+    /// <param name="watchPageData">WatchPage object</param>
+    /// <param name="audioQualities">
+    ///     Preferred audio streams (there are like 1-2 depending on video), if multiple or null NND
+    ///     will decide
+    /// </param>
+    /// <param name="videoQualities">Preferred video streams, if multiple or null NND will decide</param>
+    /// <returns>SessionCreate Response with video API info about the content</returns>
+    public async Task<SessionCreateResponse> GetHlsVideoApiResponseAsync(WatchPageData watchPageData, string[] audioQualities = null, string[] videoQualities = null)
     {
         videoQualities ??= watchPageData.Media.Delivery.Movie.Session.Videos.ToArray();
         audioQualities ??= watchPageData.Media.Delivery.Movie.Session.Audios.ToArray();
